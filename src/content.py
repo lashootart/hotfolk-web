@@ -98,7 +98,7 @@ T["sk"] = {
     "cal": {
         "num": "02 — Kalendáre 2027",
         "h2": "Vyberte si svoj rok",
-        "p": "Od slušného Klasika až po Topless bez cenzúry. Nástenné aj stolové, s menami pre Slovensko aj Česko.",
+        "p": "Od slušného Klasika až po Topless bez cenzúry. Nástenné aj stolové. Stolové so slovenskými aj českými meninami.",
         "wall": "Nástenné kalendáre", "desk": "Stolové kalendáre",
         "all": "Všetky kalendáre na e-shope",
         "note": "Ceny sú orientačné, aktuálnu cenu a dostupnosť nájdete na e-shope.",
@@ -260,7 +260,7 @@ T["cz"] = {
     "cal": {
         "num": "02 — Kalendáře 2027",
         "h2": "Vyberte si svůj rok",
-        "p": "Od slušného Klasiku až po Topless bez cenzury. Nástěnné i stolní, se jmény pro Česko i Slovensko.",
+        "p": "Od slušného Klasiku až po Topless bez cenzury. Nástěnné i stolní. Stolní s českými i slovenskými jmeninami.",
         "wall": "Nástěnné kalendáře", "desk": "Stolní kalendáře",
         "all": "Všechny kalendáře na e-shopu",
         "note": "Ceny jsou orientační v eurech, aktuální cenu a dostupnost najdete na e-shopu. Do Česka posíláme přes Packetu.",
@@ -422,7 +422,7 @@ T["de"] = {
     "cal": {
         "num": "02 — Kalender 2027",
         "h2": "Wählen Sie Ihr Jahr",
-        "p": "Vom braven Klasik bis zum unzensierten Topless. Wand- und Tischkalender, mit slowakischen und tschechischen Namenstagen.",
+        "p": "Vom braven Klasik bis zum unzensierten Topless. Wand- und Tischkalender. Die Tischkalender mit slowakischen und tschechischen Namenstagen.",
         "wall": "Wandkalender", "desk": "Tischkalender",
         "all": "Alle Kalender im Shop",
         "note": "Richtpreise in Euro. Aktuelle Preise und Verfügbarkeit finden Sie im Shop (slowakisch). Für Bestellungen nach Deutschland und Österreich schreiben Sie uns gern.",
@@ -584,7 +584,7 @@ T["en"] = {
     "cal": {
         "num": "02 — 2027 Calendars",
         "h2": "Pick your year",
-        "p": "From the well-behaved Klasik to the uncensored Topless. Wall and desk calendars, with Slovak and Czech name days.",
+        "p": "From the well-behaved Klasik to the uncensored Topless. Wall and desk calendars. Desk calendars include Slovak and Czech name days.",
         "wall": "Wall calendars", "desk": "Desk calendars",
         "all": "All calendars in the shop",
         "note": "Indicative prices in euros. Current prices and availability are in our shop (in Slovak). For orders outside Slovakia and Czechia, just write to us.",
