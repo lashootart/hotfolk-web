@@ -1,0 +1,36 @@
+# HOTFOLK® – WebSupport (Apache)
+Options -Indexes
+DirectoryIndex index.html
+ErrorDocument 404 /index.html
+
+RewriteEngine On
+# www + https
+RewriteCond %{HTTPS} off [OR]
+RewriteCond %{HTTP_HOST} !^www\. [NC]
+RewriteCond %{HTTP_HOST} ^(?:www\.)?(.+)$ [NC]
+RewriteRule ^ https://www.%1%{REQUEST_URI} [L,R=301]
+
+# staré adresy z WordPressu
+RewriteRule ^wp-(admin|login\.php) / [L,R=301]
+Redirect 301 /fotogaleria/ https://www.hotfolk.sk/galeria/
+Redirect 301 /historia/ https://www.hotfolk.sk/o-nas/
+Redirect 301 /blog/ https://www.hotfolk.sk/
+Redirect 301 /viktoriabiele/ https://eshop.hotfolk.sk/plavky-hotfolk/
+Redirect 301 /bielebrazilkysriasenimivanka/ https://eshop.hotfolk.sk/plavky-hotfolk/
+Redirect 301 /eliskacierne/ https://eshop.hotfolk.sk/plavky-hotfolk/
+Redirect 301 /plavky-hotfolk/ https://eshop.hotfolk.sk/plavky-hotfolk/
+Redirect 301 /nastenny-kalendar-zadeckovy/ https://eshop.hotfolk.sk/nastenny-kalendar-zadeckovy/
+Redirect 301 /stolovy-kalendar-pre-panov/ https://eshop.hotfolk.sk/stolovy-kalendar-pre-panov/
+Redirect 301 /eshop/ https://eshop.hotfolk.sk/
+Redirect 301 /patreon/ https://www.patreon.com/hotfolk
+
+<IfModule mod_expires.c>
+ExpiresActive On
+ExpiresByType image/jpeg "access plus 1 year"
+ExpiresByType image/png "access plus 1 year"
+ExpiresByType text/css "access plus 1 month"
+ExpiresByType application/javascript "access plus 1 month"
+</IfModule>
+<IfModule mod_deflate.c>
+AddOutputFilterByType DEFLATE text/html text/css application/javascript image/svg+xml application/xml
+</IfModule>
