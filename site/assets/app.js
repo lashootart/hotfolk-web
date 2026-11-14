@@ -22,7 +22,7 @@
 
   // age gate
   var gate=d.querySelector('.gate');
-  if(gate && store('hf_18')!=='1'){gate.classList.add('open');b.style.overflow='hidden'}
+  if(gate && store('hf_18')!=='1'){gate.classList.add('open');b.style.overflow='hidden';var yb=gate.querySelector('.yes');if(yb)setTimeout(function(){yb.focus()},50)}
   if(gate){
     gate.querySelector('.yes').addEventListener('click',function(){store('hf_18','1');gate.classList.remove('open');b.style.overflow=''});
   }
@@ -67,7 +67,8 @@
       fd.forEach(function(v,k){if(k!=='access_key'&&k!=='subject'&&k!=='botcheck'&&v)lines.push(k+': '+v)});
       if(key && key.indexOf('VLOZ')!==0){
         fd.append('access_key',key);
-        fetch('https://api.web3forms.com/submit',{method:'POST',body:fd}).then(function(r){return r.json()}).then(function(){f.classList.add('sent');f.reset()}).catch(function(){location.href='mailto:'+to+'?subject='+encodeURIComponent(f.getAttribute('data-subj'))+'&body='+encodeURIComponent(lines.join('\n'))});
+        var fallback=function(){location.href='mailto:'+to+'?subject='+encodeURIComponent(f.getAttribute('data-subj'))+'&body='+encodeURIComponent(lines.join('\n'))};
+        fetch('https://api.web3forms.com/submit',{method:'POST',headers:{'Accept':'application/json'},body:fd}).then(function(r){return r.json()}).then(function(d){if(d&&d.success){f.classList.add('sent');f.reset()}else fallback()}).catch(fallback);
       } else {
         location.href='mailto:'+to+'?subject='+encodeURIComponent(f.getAttribute('data-subj'))+'&body='+encodeURIComponent(lines.join('\n'));
       }

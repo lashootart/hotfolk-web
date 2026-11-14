@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """HOTFOLK® web generator. Spustenie: python3 build.py [výstupný_priečinok] [--preview]
 --preview pridá do odkazov index.html (na prezeranie bez servera)."""
-import sys, os, json, shutil, html as H
+import sys, os, re, json, shutil, html as H
 from PIL import Image
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from content import *
@@ -10,6 +10,17 @@ OUT = sys.argv[1] if len(sys.argv) > 1 and not sys.argv[1].startswith("--") else
 PREVIEW = "--preview" in sys.argv
 IMG_DIR = os.path.join(OUT, "assets/img")
 SIZES = {f[:-4]: Image.open(os.path.join(IMG_DIR, f)).size for f in os.listdir(IMG_DIR) if f.endswith(".jpg")}
+
+LB = {"sk": ("Zavrieť", "Predchádzajúca", "Ďalšia"), "cz": ("Zavřít", "Předchozí", "Další"),
+      "de": ("Schließen", "Vorheriges", "Nächstes"), "en": ("Close", "Previous", "Next")}
+NOSCRIPT = {"sk": "Tento web je len pre dospelých (18+). Na zobrazenie obsahu zapnite JavaScript.",
+            "cz": "Tento web je jen pro dospělé (18+). Pro zobrazení obsahu zapněte JavaScript.",
+            "de": "Diese Website ist nur für Erwachsene (18+). Bitte aktivieren Sie JavaScript, um die Inhalte zu sehen.",
+            "en": "This site is for adults only (18+). Please enable JavaScript to view the content."}
+NF = {"sk": ("Stránka sa nenašla", "Táto stránka neexistuje alebo sa presunula.", "Späť na úvod"),
+      "cz": ("Stránka nenalezena", "Tato stránka neexistuje nebo byla přesunuta.", "Zpět na úvod"),
+      "de": ("Seite nicht gefunden", "Diese Seite existiert nicht oder wurde verschoben.", "Zur Startseite"),
+      "en": ("Page not found", "This page doesn't exist or has moved.", "Back to home")}
 
 ICON = {
     "mail": '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>',
@@ -30,7 +41,12 @@ def depth(path):
     return path.count("/")
 
 
+ABS = False
+
+
 def href(frm, to):
+    if ABS:
+        return "/" + to
     up = "../" * depth(frm)
     t = to
     if PREVIEW:
@@ -39,6 +55,8 @@ def href(frm, to):
 
 
 def asset(frm, p):
+    if ABS:
+        return "/assets/" + p
     return "../" * depth(frm) + "assets/" + p
 
 
@@ -69,7 +87,8 @@ def head(lang, page, path):
     detect = ""
     if lang == "sk" and page == "home":
         # prvá návšteva: presmerovanie podľa jazyka prehliadača (len pre ľudí, nie pre roboty)
-        detect = """<script>(function(){try{if(localStorage.getItem('hf_lang'))return;var l=(navigator.language||'sk').slice(0,2).toLowerCase();var m={cs:'%s',de:'%s'};var t=m[l]||(l!=='sk'&&/^[a-z]{2}$/.test(l)&&!/bot|crawl|spider/i.test(navigator.userAgent)?'%s':null);if(t){localStorage.setItem('hf_lang',l==='cs'?'cz':l==='de'?'de':'en');location.replace(t)}}catch(e){}})();</script>""" % (
+        detect = """<script>(function(){try{var s=localStorage.getItem('hf_lang');if(s){var u={cz:'%s',de:'%s',en:'%s'}[s];if(u)location.replace(u);return}var l=(navigator.language||'sk').slice(0,2).toLowerCase();var m={cs:'%s',de:'%s'};var t=m[l]||(l!=='sk'&&/^[a-z]{2}$/.test(l)&&!/bot|crawl|spider/i.test(navigator.userAgent)?'%s':null);if(t){localStorage.setItem('hf_lang',l==='cs'?'cz':l==='de'?'de':'en');location.replace(t)}}catch(e){}})();</script>""" % (
+            href(path, SLUG["cz"]["home"]), href(path, SLUG["de"]["home"]), href(path, SLUG["en"]["home"]),
             href(path, SLUG["cz"]["home"]), href(path, SLUG["de"]["home"]), href(path, SLUG["en"]["home"]))
     return """<!DOCTYPE html>
 <html lang="%(hl)s">
@@ -100,7 +119,7 @@ def head(lang, page, path):
 </head>
 """ % dict(hl=HTML_LANG[lang], title=e(t["title"][page]), desc=e(t["desc"][page]), canon=DOMAIN + "/" + SLUG[lang][page],
            alts=alts, dom=DOMAIN, loc=OG_LOCALE[lang], fav=asset(path, "img/favicon-32.png"), ati=asset(path, "img/apple-touch-icon.png"),
-           css=asset(path, "style.css?v=9"), detect=detect, ld=ld)
+           css=asset(path, "style.css?v=10"), detect=detect, ld=ld)
 
 
 def langs_html(lang, page, path, cls=""):
@@ -143,14 +162,15 @@ def footer(lang, page, path):
 </div>
 <div class="bot wrap"><div><a href="%(eshop)s/obchodne-podmienky/">%(terms)s</a><a href="%(eshop)s/podmienky-ochrany-osobnych-udajov/">%(priv)s</a></div><div>© <span class="yr">2026</span> HOTFOLK s.r.o. · %(adult)s</div></div>
 </footer>
-<div class="lb" role="dialog" aria-modal="true"><button class="x" aria-label="×">×</button><button class="pv" aria-label="←">‹</button><img alt=""><button class="nx" aria-label="→">›</button><div class="cnt"></div></div>
+<div class="lb" role="dialog" aria-modal="true"><button class="x" aria-label="%(lbx)s">×</button><button class="pv" aria-label="%(lbp)s">‹</button><img alt=""><button class="nx" aria-label="%(lbn)s">›</button><div class="cnt"></div></div>
 <div class="gate" role="dialog" aria-modal="true" aria-labelledby="gate-h"><div class="box"><img src="%(logo)s" alt="HOTFOLK®"><h2 id="gate-h">%(gh)s</h2><p>%(gp)s</p><div class="ctas"><button class="btn red yes">%(gy)s</button><a class="btn" href="https://www.google.com/">%(gn)s</a></div></div></div>
+<noscript><style>main,.ftr,.hdr .nav{display:none!important}</style><div class="gate open" style="display:flex"><div class="box"><img src="%(logo)s" alt="HOTFOLK®"><h2>%(gh)s</h2><p>%(nsp)s</p></div></div></noscript>
 <script src="%(js)s" defer></script>
 </body>
 </html>
 """ % dict(home=href(path, SLUG[lang]["home"]), logo=asset(path, "img/logo.png"), about=f["about"], ig=IG, fb=FB, iic=ICON["ig"], fic=ICON["fb"],
            navh=f["nav"], nav=nav, shoph=f["shop"], shop=shop, ch=f["contact"], mi=MAIL_INFO, mb=MAIL_B2B, ph=PHONE_HREF, pht=PHONE,
-           pat=PATREON, pic=ICON["pat"], eshop=ESHOP, terms=f["terms"], priv=f["privacy"], adult=f["adult"], gh=g["h"], gp=g["p"], gy=g["yes"], gn=g["no"], js=asset(path, "app.js?v=3"))
+           pat=PATREON, pic=ICON["pat"], lbx=LB[lang][0], lbp=LB[lang][1], lbn=LB[lang][2], nsp=NOSCRIPT[lang], eshop=ESHOP, terms=f["terms"], priv=f["privacy"], adult=f["adult"], gh=g["h"], gp=g["p"], gy=g["yes"], gn=g["no"], js=asset(path, "app.js?v=4"))
 
 
 def cal_rows(lang, path, group):
@@ -291,7 +311,11 @@ def page_home(lang, path):
 def page_gallery(lang, path):
     g = T[lang]["gal"]
     fl = "".join('<button data-f="%s"%s>%s</button>' % (k, ' class="on"' if k == "all" else "", v) for k, v in g["filters"].items())
-    items = "".join('<a href="%s" data-lb data-c="%s">%s</a>' % (asset(path, "img/%s.jpg" % n), c, img(path, n, g["alt"][c])) for n, c in GALLERY_MIXED)
+    cnt = {}
+    def alt(c):
+        cnt[c] = cnt.get(c, 0) + 1
+        return "%s – %d" % (g["alt"][c], cnt[c])
+    items = "".join('<a href="%s" data-lb data-c="%s">%s</a>' % (asset(path, "img/%s.jpg" % n), c, img(path, n, alt(c))) for n, c in GALLERY_MIXED)
     return """
 <section class="phero"><div class="wrap"><span class="eyebrow rv">HOTFOLK® 2027</span><h1 class="rv d1">%s</h1><p class="lead rv d2">%s</p></div></section>
 <section class="sec" style="padding-top:0"><div class="wrap">
@@ -506,6 +530,23 @@ def build():
             os.makedirs(os.path.dirname(fp), exist_ok=True)
             open(fp, "w", encoding="utf-8").write(body)
             files.append(path)
+    # 404 – absolútne cesty, bez presmerovania jazyka
+    global ABS
+    ABS = True
+    for lang in LANGS:
+        pre = "" if lang == "sk" else lang + "/"
+        t = NF[lang]
+        hd = head(lang, "home", "")
+        hd = re.sub(r'<link rel="(canonical|alternate)"[^>]*>', "", hd)
+        hd = re.sub(r"<script>\(function\(\)\{try\{var s=localStorage.*?</script>", "", hd, flags=re.S)
+        hd = re.sub(r"<title>.*?</title>", "<title>%s | HOTFOLK®</title>" % t[0], hd).replace('<meta charset="utf-8">', '<meta charset="utf-8">\n<meta name="robots" content="noindex">')
+        hd = re.sub(r'<script type="application/ld\+json">.*?</script>', "", hd, flags=re.S)
+        body = hd + header(lang, "home", "") + """
+<section class="phero"><div class="wrap"><span class="eyebrow">404</span><h1>%s</h1><p class="lead">%s</p>
+<div class="ctas" style="margin-top:30px"><a class="btn red" href="/%s">%s %s</a><a class="btn" href="%s/">E-shop</a></div></div></section>
+""" % (t[0], t[1], pre, t[2], AR, ESHOP) + footer(lang, "home", "")
+        open(os.path.join(OUT, pre, "404.html"), "w", encoding="utf-8").write(body)
+    ABS = False
     # sitemap
     sm = ['<?xml version="1.0" encoding="UTF-8"?>', '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">']
     for lang in LANGS:
@@ -522,10 +563,25 @@ def build():
              ("/eliskacierne/", ESHOP + "/plavky-hotfolk/"), ("/plavky-hotfolk/", ESHOP + "/plavky-hotfolk/"),
              ("/nastenny-kalendar-zadeckovy/", ESHOP + "/nastenny-kalendar-zadeckovy/"), ("/stolovy-kalendar-pre-panov/", ESHOP + "/stolovy-kalendar-pre-panov/"),
              ("/eshop/", ESHOP + "/"), ("/patreon/", PATREON)]
-    ht = ["# HOTFOLK® – WebSupport (Apache)", "Options -Indexes", "DirectoryIndex index.html", "ErrorDocument 404 /index.html", "",
+    ht = ["# HOTFOLK® – WebSupport (Apache)", "Options -Indexes", "DirectoryIndex index.html", "ErrorDocument 404 /404.html",
+          '<If "%{REQUEST_URI} =~ m#^/cz/#">', "ErrorDocument 404 /cz/404.html", "</If>",
+          '<If "%{REQUEST_URI} =~ m#^/de/#">', "ErrorDocument 404 /de/404.html", "</If>",
+          '<If "%{REQUEST_URI} =~ m#^/en/#">', "ErrorDocument 404 /en/404.html", "</If>", "",
+          "<IfModule mod_headers.c>",
+          'Header always set Strict-Transport-Security "max-age=31536000"',
+          'Header always set X-Frame-Options "SAMEORIGIN"',
+          'Header always set X-Content-Type-Options "nosniff"',
+          'Header always set Referrer-Policy "strict-origin-when-cross-origin"',
+          '<FilesMatch "\\.(jpe?g|png|webp|ico)$">', 'Header set Cache-Control "public, max-age=31536000"', "</FilesMatch>",
+          '<FilesMatch "\\.(css|js)$">', 'Header set Cache-Control "public, max-age=2592000"', "</FilesMatch>",
+          '<FilesMatch "\\.html$">', 'Header set Cache-Control "no-cache"', "</FilesMatch>",
+          "</IfModule>", "",
           "RewriteEngine On", "# www + https", "RewriteCond %{HTTPS} off [OR]", "RewriteCond %{HTTP_HOST} !^www\\. [NC]",
           "RewriteCond %{HTTP_HOST} ^(?:www\\.)?(.+)$ [NC]", "RewriteRule ^ https://www.%1%{REQUEST_URI} [L,R=301]", "",
-          "# staré adresy z WordPressu", "RewriteRule ^wp-(admin|login\\.php) / [L,R=301]"]
+          "# staré adresy z WordPressu", "RewriteRule ^wp-(admin|login\\.php) / [L,R=301]",
+          "# /index.html → /",
+          "RewriteCond %{THE_REQUEST} \\s/(.*/)?index\\.html[\\s?]",
+          "RewriteRule ^(.*/)?index\\.html$ /$1 [R=301,L]"]
     for a, b in redir:
         ht.append("Redirect 301 %s %s" % (a, b if b.startswith("http") else DOMAIN + b))
     ht += ["", "<IfModule mod_expires.c>", "ExpiresActive On", 'ExpiresByType image/jpeg "access plus 1 year"', 'ExpiresByType image/png "access plus 1 year"',
