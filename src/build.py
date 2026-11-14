@@ -9,6 +9,8 @@ from content import *
 OUT = sys.argv[1] if len(sys.argv) > 1 and not sys.argv[1].startswith("--") else os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "site")
 PREVIEW = "--preview" in sys.argv
 IMG_DIR = os.path.join(OUT, "assets/img")
+import hashlib
+HASH = {f[:-4]: hashlib.md5(open(os.path.join(IMG_DIR, f), "rb").read()).hexdigest()[:8] for f in os.listdir(IMG_DIR) if f.endswith(".jpg")}
 SIZES = {f[:-4]: Image.open(os.path.join(IMG_DIR, f)).size for f in os.listdir(IMG_DIR) if f.endswith(".jpg")}
 
 LB = {"sk": ("Zavrieť", "Predchádzajúca", "Ďalšia"), "cz": ("Zavřít", "Předchozí", "Další"),
@@ -69,7 +71,7 @@ def price(v, lang):
 def img(frm, name, alt, cls="", lazy=True, sizes=True):
     w, h = SIZES[name]
     return '<img src="%s" alt="%s" width="%d" height="%d"%s%s>' % (
-        asset(frm, "img/%s.jpg" % name), e(alt), w, h, ' loading="lazy" decoding="async"' if lazy else "", (' class="%s"' % cls) if cls else "")
+        asset(frm, "img/%s.jpg?v=%s" % (name, HASH[name])), e(alt), w, h, ' loading="lazy" decoding="async"' if lazy else "", (' class="%s"' % cls) if cls else "")
 
 
 def head(lang, page, path):
@@ -221,7 +223,7 @@ def page_home(lang, path):
     g = t["gal"]
     teaser_imgs = ["zeny-09", "zeny-01", "muzi-01", "zeny-02", "plavky-02", "zeny-07", "doplnky-04"]
     cat = lambda n: n.split("-")[0]
-    teaser = "".join('<a href="%s" data-lb>%s</a>' % (asset(path, "img/%s.jpg" % n), img(path, n, alt_for(n, lang, g["alt"][cat(n)]))) for n in teaser_imgs)
+    teaser = "".join('<a href="%s" data-lb>%s</a>' % (asset(path, "img/%s.jpg?v=%s" % (n, HASH[n])), img(path, n, alt_for(n, lang, g["alt"][cat(n)]))) for n in teaser_imgs)
     bb = t["b2b_band"]
     s = t["social"]
     return """
@@ -311,7 +313,7 @@ def page_home(lang, path):
 def page_gallery(lang, path):
     g = T[lang]["gal"]
     fl = "".join('<button data-f="%s"%s>%s</button>' % (k, ' class="on"' if k == "all" else "", v) for k, v in g["filters"].items())
-    items = "".join('<a href="%s" data-lb data-c="%s">%s</a>' % (asset(path, "img/%s.jpg" % n), c, img(path, n, alt_for(n, lang, g["alt"][c]))) for n, c in GALLERY_MIXED)
+    items = "".join('<a href="%s" data-lb data-c="%s">%s</a>' % (asset(path, "img/%s.jpg?v=%s" % (n, HASH[n])), c, img(path, n, alt_for(n, lang, g["alt"][c]))) for n, c in GALLERY_MIXED)
     return """
 <section class="phero"><div class="wrap"><span class="eyebrow rv">HOTFOLK® 2027</span><h1 class="rv d1">%s</h1><p class="lead rv d2">%s</p></div></section>
 <section class="sec" style="padding-top:0"><div class="wrap">
