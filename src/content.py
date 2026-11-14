@@ -12,8 +12,8 @@ MAIL_B2B = "admin@hotfolk.sk"
 PHONE = "+421 915 201 071"
 PHONE_HREF = "+421915201071"
 WEB3FORMS_KEYS = {  # kľúče z web3forms.com – kým nie sú vložené, formulár otvorí e-mail
-    "info@hotfolk.sk": "VLOZ_WEB3FORMS_KLUC",
-    "admin@hotfolk.sk": "VLOZ_WEB3FORMS_KLUC",
+    "info@hotfolk.sk": "afa37f72-50af-4678-b9bf-f2126a2272f0",   # dočasne kľúč admin@ – po doručení kľúča pre info@ vymeniť
+    "admin@hotfolk.sk": "afa37f72-50af-4678-b9bf-f2126a2272f0",
 }
 
 LANGS = ["sk", "cz", "de", "en"]
