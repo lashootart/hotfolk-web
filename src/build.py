@@ -119,7 +119,7 @@ def head(lang, page, path):
 </head>
 """ % dict(hl=HTML_LANG[lang], title=e(t["title"][page]), desc=e(t["desc"][page]), canon=DOMAIN + "/" + SLUG[lang][page],
            alts=alts, dom=DOMAIN, loc=OG_LOCALE[lang], fav=asset(path, "img/favicon-32.png"), ati=asset(path, "img/apple-touch-icon.png"),
-           css=asset(path, "style.css?v=10"), detect=detect, ld=ld)
+           css=asset(path, "style.css?v=11"), detect=detect, ld=ld)
 
 
 def langs_html(lang, page, path, cls=""):
@@ -201,7 +201,7 @@ def form_html(lang, to, default_topic=0, qty=False):
 <button class="btn red" type="submit">%(send)s %(ar)s</button>
 <p class="legal">%(legal)s</p>
 <div class="ok" role="status">%(ok)s</div>
-</form>""" % dict(to=to, subj=e(f["subj"]), key=WEB3FORMS_KEY, h=f["h"], p=f["p"], name=f["name"], email=f["email"], company=f["company"], topic=f["topic"],
+</form>""" % dict(to=to, subj=e(f["subj"]), key=WEB3FORMS_KEYS.get(to, ""), h=f["h"], p=f["p"], name=f["name"], email=f["email"], company=f["company"], topic=f["topic"],
                   opts=opts, q=q, msg=f["msg"], send=f["send"], ar=AR, legal=f["legal"], ok=f["ok"])
 
 
@@ -221,7 +221,7 @@ def page_home(lang, path):
     g = t["gal"]
     teaser_imgs = ["zeny-09", "zeny-01", "muzi-01", "zeny-02", "plavky-02", "zeny-07", "doplnky-04"]
     cat = lambda n: n.split("-")[0]
-    teaser = "".join('<a href="%s" data-lb>%s</a>' % (asset(path, "img/%s.jpg" % n), img(path, n, g["alt"][cat(n)])) for n in teaser_imgs)
+    teaser = "".join('<a href="%s" data-lb>%s</a>' % (asset(path, "img/%s.jpg" % n), img(path, n, alt_for(n, lang, g["alt"][cat(n)]))) for n in teaser_imgs)
     bb = t["b2b_band"]
     s = t["social"]
     return """
@@ -294,7 +294,7 @@ def page_home(lang, path):
 <div class="ctas rv d1"><a class="btn" href="%(ig)s" target="_blank" rel="noopener">%(sig)s · @hotfolk_official</a><a class="btn" href="%(fb)s" target="_blank" rel="noopener">%(sfb)s</a></div>
 </div></section>
 """ % dict(eyebrow=h["eyebrow"], h1=h["h1"], tag=h["tag"], lead=h["lead"], cta1=h["cta1"], cta2=h["cta2"], ar=AR, gal=href(path, SLUG[lang]["gallery"]), meta=meta,
-           m1=img(path, "zeny-09", g["alt"]["zeny"], lazy=False), m2=img(path, "zeny-01", g["alt"]["zeny"], lazy=False), m3=img(path, "muzi-03", g["alt"]["muzi"], lazy=False),
+           m1=img(path, "zeny-09", alt_for("zeny-09", lang), lazy=False), m2=img(path, "zeny-01", alt_for("zeny-01", lang), lazy=False), m3=img(path, "muzi-03", alt_for("muzi-03", lang), lazy=False),
            bb=h["badge"][0], bs=h["badge"][1], tick=tick, inum=t["intro"]["num"], itext=t["intro"]["text"], pil=pil,
            chead=sec_head(c["num"], c["h2"], c["p"]), wall=c["wall"], desk=c["desk"], wrows=cal_rows(lang, path, "wall"), drows=cal_rows(lang, path, "desk"),
            note=c["note"], eshop=ESHOP, all=c["all"],
@@ -302,20 +302,16 @@ def page_home(lang, path):
            ghead=sec_head(g["num"], g["h2"], g["p"], '<p style="margin-top:18px"><a class="link" href="%s">%s →</a></p>' % (href(path, SLUG[lang]["gallery"]), g["more"])),
            teaser=teaser, bbh=bb["h2"], bbp=bb["p"], bbc=bb["cta"], biz=href(path, SLUG[lang]["business"]), bbl="".join("<li>%s</li>" % x for x in bb["list"]),
            sh=s["h2"], ig=IG, fb=FB, sig=s["ig"], sfb=s["fb"],
-           ut_img=img(path, "zeny-11", g["alt"]["zeny"]), ut_st=t["unc"]["sticker"], ut_h=t["unc"]["home_h"], ut_p=t["unc"]["home_p"],
+           ut_img=img(path, "zeny-11", alt_for("zeny-11", lang)), ut_st=t["unc"]["sticker"], ut_h=t["unc"]["home_h"], ut_p=t["unc"]["home_p"],
            ut_cta=t["unc"]["home_cta"], ut_link=href(path, SLUG[lang]["uncensored"]),
-           casting=casting(lang, path), vt_link=href(path, SLUG[lang]["vote"]), vt_imgs="".join(img(path, m["img"], m["name"]) for m in VOTE["models"]),
+           casting=casting(lang, path), vt_link=href(path, SLUG[lang]["vote"]), vt_imgs="".join(img(path, m["img"], m["name"][lang]) for m in VOTE["models"]),
            vt_eb=t["vote"]["eyebrow"], vt_h=t["vote"]["home_h"], vt_p=t["vote"]["home_p"], vt_cta=t["vote"]["home_cta"])
 
 
 def page_gallery(lang, path):
     g = T[lang]["gal"]
     fl = "".join('<button data-f="%s"%s>%s</button>' % (k, ' class="on"' if k == "all" else "", v) for k, v in g["filters"].items())
-    cnt = {}
-    def alt(c):
-        cnt[c] = cnt.get(c, 0) + 1
-        return "%s – %d" % (g["alt"][c], cnt[c])
-    items = "".join('<a href="%s" data-lb data-c="%s">%s</a>' % (asset(path, "img/%s.jpg" % n), c, img(path, n, alt(c))) for n, c in GALLERY_MIXED)
+    items = "".join('<a href="%s" data-lb data-c="%s">%s</a>' % (asset(path, "img/%s.jpg" % n), c, img(path, n, alt_for(n, lang, g["alt"][c]))) for n, c in GALLERY_MIXED)
     return """
 <section class="phero"><div class="wrap"><span class="eyebrow rv">HOTFOLK® 2027</span><h1 class="rv d1">%s</h1><p class="lead rv d2">%s</p></div></section>
 <section class="sec" style="padding-top:0"><div class="wrap">
@@ -444,7 +440,7 @@ def page_uncensored(lang, path):
 <p class="note" style="margin-top:22px">%(note)s</p>
 </div></section>
 """ % dict(eb=u["eyebrow"], h1=u["h1"], lead=u["lead"], pat=PATREON, cta=u["cta"], cta2=u["cta2"], ar=AR, es=ESHOP,
-           i1=img(path, "zeny-11", alt, lazy=False), i2=img(path, "zeny-10", alt, lazy=False), i3=img(path, "zeny-12", alt, lazy=False), st=st,
+           i1=img(path, "zeny-11", alt_for("zeny-11", lang), lazy=False), i2=img(path, "zeny-10", alt_for("zeny-10", lang), lazy=False), i3=img(path, "zeny-12", alt_for("zeny-12", lang), lazy=False), st=st,
            whyh=u["why_h"], why=why, th=u["tiers_h"], tp=u["tiers_p"],
            tiers="".join('<a class="tier" href="%s" target="_blank" rel="noopener"><b>%s</b><span>%s</span></a>' % (PATREON, ("$%d" % v) if lang == "en" else ("%d $" % v), u["per"]) for v in PATREON_TIERS), howh=u["how_h"], how=how, bh=u["band_h"], bp=u["band_p"], note=u["note"])
 
@@ -460,7 +456,7 @@ def page_vote(lang, path):
 <div class="vbody"><h3>%(name)s</h3>
 <div class="vres"><div class="vbar"><i></i></div><div class="vnums"><span class="vpct">0 %%</span><span class="vn"></span></div></div>
 <button class="btn red vbtn" type="button">%(vote)s %(ar)s</button></div>
-</article>""" % dict(i=i, id=m["id"], img=img(path, m["img"], m["name"], lazy=False), name=m["name"], vote=v["vote"], ar=AR, mine=v["chosen"])
+</article>""" % dict(i=i, id=m["id"], img=img(path, m["img"], m["name"][lang], lazy=False), name=m["name"][lang], vote=v["vote"], ar=AR, mine=v["chosen"])
         for i, m in enumerate(VOTE["models"]))
     how = "".join('<div class="step rv d%d"><h3>%s</h3><p>%s</p></div>' % (i, a, b) for i, (a, b) in enumerate(v["how"]))
     return """

@@ -11,7 +11,10 @@ MAIL_INFO = "info@hotfolk.sk"
 MAIL_B2B = "admin@hotfolk.sk"
 PHONE = "+421 915 201 071"
 PHONE_HREF = "+421915201071"
-WEB3FORMS_KEY = "VLOZ_WEB3FORMS_KLUC"   # kľúč z web3forms.com – kým nie je vložený, formulár otvorí e-mail
+WEB3FORMS_KEYS = {  # kľúče z web3forms.com – kým nie sú vložené, formulár otvorí e-mail
+    "info@hotfolk.sk": "VLOZ_WEB3FORMS_KLUC",
+    "admin@hotfolk.sk": "VLOZ_WEB3FORMS_KLUC",
+}
 
 LANGS = ["sk", "cz", "de", "en"]
 HTML_LANG = {"sk": "sk", "cz": "cs", "de": "de", "en": "en"}
@@ -79,7 +82,7 @@ T["sk"] = {
     },
     "hero": {
         "eyebrow": "Kalendáre 2027 sú v predaji",
-        "h1": "Česko‑slovenský vidiek <em>v tom najlepšom svetle.</em>", "tag": "Rok 2027 bude pekný. Sľubujeme.",
+        "h1": "Kalendáre, pri ktorých <em>zabudneš, koľkého je.</em>", "tag": "Tak ako naše ľudové piesne, aj my prinášame do našich kalendárov trochu pikantnosti.",
         "lead": "HOTFOLK® je rodinná česko-slovenská značka. Fotíme ženy a mužov na vidieku a v prírode – s humorom a štipkou zmyselnosti. Robíme kalendáre, plavky a doplnky.",
         "cta1": "Vybrať kalendár", "cta2": "Pozrieť galériu",
         "meta": [("8 edícií", "kalendárov na rok 2027"), ("SK & CZ", "fotené na vidieku"), ("Made in SK", "plavky a doplnky")],
@@ -241,7 +244,7 @@ T["cz"] = {
     },
     "hero": {
         "eyebrow": "Kalendáře 2027 jsou v prodeji",
-        "h1": "Česko‑slovenský venkov <em>v tom nejlepším světle.</em>", "tag": "Rok 2027 bude pěkný. Slibujeme.",
+        "h1": "Kalendáře, u kterých <em>zapomeneš, kolikátého je.</em>", "tag": "Stejně jako naše lidové písničky, i my přinášíme do našich kalendářů trochu pikantnosti.",
         "lead": "HOTFOLK® je rodinná česko-slovenská značka. Fotíme ženy a muže na venkově a v přírodě – s humorem a špetkou smyslnosti. Děláme kalendáře, plavky a doplňky.",
         "cta1": "Vybrat kalendář", "cta2": "Prohlédnout galerii",
         "meta": [("8 edic", "kalendářů na rok 2027"), ("CZ & SK", "foceno na venkově"), ("Made in SK", "plavky a doplňky")],
@@ -403,7 +406,7 @@ T["de"] = {
     },
     "hero": {
         "eyebrow": "Die Kalender 2027 sind da",
-        "h1": "Slowakisch‑tschechisches Landleben <em>im besten Licht.</em>", "tag": "2027 wird ein schönes Jahr. Versprochen.",
+        "h1": "Kalender, bei denen du <em>vergisst, welcher Tag ist.</em>", "tag": "Wie unsere alten Volkslieder bringen auch wir ein bisschen Pikanterie in unsere Kalender.",
         "lead": "HOTFOLK® ist eine slowakisch-tschechische Familienmarke. Wir fotografieren Frauen und Männer auf dem Land und in der Natur – mit Humor und einer Prise Sinnlichkeit. Wir machen Kalender, Bademode und Accessoires.",
         "cta1": "Kalender wählen", "cta2": "Zur Galerie",
         "meta": [("8 Editionen", "Kalender für 2027"), ("SK & CZ", "auf dem Land fotografiert"), ("Made in SK", "Bademode & Accessoires")],
@@ -565,7 +568,7 @@ T["en"] = {
     },
     "hero": {
         "eyebrow": "2027 calendars are out now",
-        "h1": "The Slovak and Czech countryside <em>in its best light.</em>", "tag": "2027 is going to be a beautiful year. We promise.",
+        "h1": "Calendars that make you <em>forget what day it is.</em>", "tag": "Just like our old folk songs, we bring a little spice to our calendars.",
         "lead": "HOTFOLK® is a Slovak-Czech family brand. We photograph women and men in the countryside and out in nature – with humour and a pinch of sensuality. We make calendars, swimwear and accessories.",
         "cta1": "Choose a calendar", "cta2": "View the gallery",
         "meta": [("8 editions", "of 2027 calendars"), ("SK & CZ", "shot in the countryside"), ("Made in SK", "swimwear & accessories")],
@@ -820,9 +823,9 @@ VOTE = {
     "end_txt": {"sk": "30. 11. 2026 o 23:59", "cz": "30. 11. 2026 ve 23:59", "de": "30.11.2026, 23:59 Uhr", "en": "30 November 2026, 23:59 CET"},
     "month": {"sk": "novembra", "cz": "listopadu", "de": "November", "en": "November"},
     "models": [                            # fotky: assets/img/vote-1.jpg … vote-3.jpg
-        {"id": "1", "name": "Fotka 1", "img": "vote-1"},
-        {"id": "2", "name": "Fotka 2", "img": "vote-2"},
-        {"id": "3", "name": "Fotka 3", "img": "vote-3"},
+        {"id": "1", "name": {"sk": "Ryšavka pri breze", "cz": "Zrzka u břízy", "de": "Rothaarige an der Birke", "en": "Redhead by the birch"}, "img": "vote-1"},
+        {"id": "2", "name": {"sk": "Jesenný vánok", "cz": "Podzimní vánek", "de": "Herbstbrise", "en": "Autumn breeze"}, "img": "vote-2"},
+        {"id": "3", "name": {"sk": "Jablkobranie", "cz": "Česání jablek", "de": "Apfelernte", "en": "Apple picking"}, "img": "vote-3"},
     ],
 }
 
@@ -1048,3 +1051,42 @@ CAST = {
 for _l in LANGS:
     T[_l]["cast"] = CAST[_l]
     T[_l]["form"]["topics"] = T[_l]["form"]["topics"][:4] + [CAST[_l]["topic"]] + T[_l]["form"]["topics"][4:]
+
+# ───────── Popisy fotiek (alt texty) ─────────
+ALTS = {
+ "zeny-01": ("Tmavovláska v červenej sukni sedí v tráve medzi ružami", "Brunetka v červené sukni sedí v trávě mezi růžemi", "Brünette im roten Rock sitzt im Gras zwischen Rosen", "Brunette in a red skirt sitting in the grass among roses"),
+ "zeny-02": ("Ryšavka v bielych šatách sa opiera o brezu", "Zrzka v bílých šatech se opírá o břízu", "Rothaarige im weißen Kleid lehnt an einer Birke", "Redhead in a white dress leaning against a birch tree"),
+ "zeny-03": ("Tri dievčatá v bielych blúzkach oddychujú na lavici pred dedinským domom", "Tři holky v bílých halenkách odpočívají na lavici před vesnickým domem", "Drei Frauen in weißen Blusen ruhen auf einer Bank vor einem Dorfhaus", "Three women in white blouses relaxing on a bench outside a village house"),
+ "zeny-04": ("Dievča kľačí v rozkvitnutej lúke v západe slnka", "Holka klečí v rozkvetlé louce při západu slunce", "Frau kniet in einer blühenden Wiese bei Sonnenuntergang", "Woman kneeling in a flowering meadow at sunset"),
+ "zeny-05": ("Rad dievčat zozadu pri vinohrade pred dedinským domom", "Řada holek zezadu u vinohradu před vesnickým domem", "Reihe von Frauen von hinten am Weinberg vor einem Dorfhaus", "Row of women seen from behind by a vineyard and a village house"),
+ "zeny-06": ("Dievča v bielej spodnej bielizni leží na drevenej terase", "Holka v bílém spodním prádle leží na dřevěné terase", "Frau in weißer Wäsche liegt auf einer Holzterrasse", "Woman in white lingerie lying on a wooden deck"),
+ "zeny-07": ("Tmavovláska s kvetmi vo vlasoch v okne drevenice", "Brunetka s květy ve vlasech v okně roubenky", "Brünette mit Blumen im Haar im Fenster eines Holzhauses", "Brunette with flowers in her hair at the window of a log house"),
+ "zeny-08": ("Tri dievčatá pri okne v starej izbe s maľovanými dverami", "Tři holky u okna ve staré světnici s malovanými dveřmi", "Drei Frauen am Fenster in einer alten Stube mit bemalter Tür", "Three women by the window of an old room with a painted door"),
+ "zeny-09": ("Štyri dievčatá v snehu pred zrubom", "Čtyři holky ve sněhu před roubenkou", "Vier Frauen im Schnee vor einer Blockhütte", "Four women in the snow outside a log cabin"),
+ "zeny-10": ("Blondínka v zelenej sukni trhá jablká v sade (cenzurované)", "Blondýnka v zelené sukni trhá jablka v sadu (cenzurováno)", "Blondine im grünen Rock pflückt Äpfel im Obstgarten (zensiert)", "Blonde in a green skirt picking apples in an orchard (censored)"),
+ "zeny-11": ("Tri ryšavky v červených sukniach v slnku (cenzurované)", "Tři zrzky v červených sukních na slunci (cenzurováno)", "Drei Rothaarige in roten Röcken in der Sonne (zensiert)", "Three redheads in red skirts in the sun (censored)"),
+ "zeny-12": ("Smejúca sa tmavovláska v červenej sukni na dvore (cenzurované)", "Smějící se brunetka v červené sukni na dvoře (cenzurováno)", "Lachende Brünette im roten Rock im Hof (zensiert)", "Laughing brunette in a red skirt in a farmyard (censored)"),
+ "muzi-01": ("Šiesti chlapi zozadu na lúke s výhľadom na hory", "Šest chlapů zezadu na louce s výhledem na hory", "Sechs Männer von hinten auf einer Wiese mit Bergblick", "Six men seen from behind in a meadow with a mountain view"),
+ "muzi-02": ("Chlapi vo vestách v starej kancelárii s mapami", "Chlapi ve vestách ve staré kanceláři s mapami", "Männer in Westen in einem alten Büro mit Landkarten", "Men in waistcoats in an old office with maps"),
+ "muzi-03": ("Skupina chlapov bez košieľ pri drevenej šope", "Parta chlapů bez košil u dřevěné kůlny", "Gruppe Männer ohne Hemd vor einem Holzschuppen", "Group of shirtless men by a wooden shed"),
+ "muzi-04": ("Tetovaný muž v čiernych pánskych plavkách HOTFOLK", "Tetovaný muž v černých pánských plavkách HOTFOLK", "Tätowierter Mann in schwarzen HOTFOLK Badeshorts", "Tattooed man in black HOTFOLK swim shorts"),
+ "plavky-01": ("Čierne plavky HOTFOLK s bielym kvetinovým vzorom, vrchný diel so šnúrkou", "Černé plavky HOTFOLK s bílým květinovým vzorem, horní díl se šňůrkou", "Schwarzer HOTFOLK Bikini mit weißem Blumenmuster, Oberteil mit Schnürung", "Black HOTFOLK bikini with white floral pattern, tie-front top"),
+ "plavky-02": ("Biely pás plaviek HOTFOLK s farebnými kvetmi", "Bílý pás plavek HOTFOLK s barevnými květy", "Weißes HOTFOLK Bandeau-Oberteil mit bunten Blumen", "White HOTFOLK bandeau top with colourful flowers"),
+ "plavky-03": ("Biele spodné diely plaviek HOTFOLK s farebným vzorom", "Bílé spodní díly plavek HOTFOLK s barevným vzorem", "Weißes HOTFOLK Bikini-Höschen mit buntem Muster", "White HOTFOLK bikini bottoms with a colourful pattern"),
+ "plavky-04": ("Čierne spodné diely plaviek HOTFOLK s mašľou na boku", "Černé spodní díly plavek HOTFOLK s mašlí na boku", "Schwarzes HOTFOLK Bikini-Höschen mit Schleife an der Seite", "Black HOTFOLK bikini bottoms with a side bow"),
+ "plavky-05": ("Biely vrchný diel plaviek HOTFOLK s kvetinovým vzorom", "Bílý horní díl plavek HOTFOLK s květinovým vzorem", "Weißes HOTFOLK Bikini-Oberteil mit Blumenmuster", "White HOTFOLK bikini top with floral pattern"),
+ "plavky-06": ("Biele plavky HOTFOLK s farebnými kvetmi, pohľad zboku", "Bílé plavky HOTFOLK s barevnými květy, pohled z boku", "Weißer HOTFOLK Bikini mit bunten Blumen, Seitenansicht", "White HOTFOLK bikini with colourful flowers, side view"),
+ "plavky-07": ("Čierne brazilky HOTFOLK s bielym vzorom", "Černé brazilky HOTFOLK s bílým vzorem", "Schwarzes brasilianisches HOTFOLK Höschen mit weißem Muster", "Black HOTFOLK Brazilian bikini bottoms with white pattern"),
+ "plavky-08": ("Čierne plavky HOTFOLK s bielym vzorom", "Černé plavky HOTFOLK s bílým vzorem", "Schwarzer HOTFOLK Bikini mit weißem Muster", "Black HOTFOLK bikini with white pattern"),
+ "doplnky-01": ("Biele ponožky HOTFOLK s farebným vzorom pri čítaní knihy", "Bílé ponožky HOTFOLK s barevným vzorem při čtení knihy", "Weiße HOTFOLK Socken mit buntem Muster beim Lesen", "White HOTFOLK socks with a colourful pattern while reading"),
+ "doplnky-02": ("Ponožky HOTFOLK s logom na tetovaných nohách", "Ponožky HOTFOLK s logem na tetovaných nohou", "HOTFOLK Socken mit Logo an tätowierten Beinen", "HOTFOLK socks with logo on tattooed legs"),
+ "doplnky-03": ("Taška HOTFOLK s červenými uchami na deke v tráve", "Taška HOTFOLK s červenými uchy na dece v trávě", "HOTFOLK Tasche mit roten Henkeln auf einer Decke im Gras", "HOTFOLK tote with red handles on a blanket in the grass"),
+ "doplnky-04": ("Biela taška HOTFOLK s kvetinovým vzorom pri drevenom kolese", "Bílá taška HOTFOLK s květinovým vzorem u dřevěného kola", "Weiße HOTFOLK Tasche mit Blumenmuster an einem Holzrad", "White HOTFOLK tote with floral pattern by a wooden wheel"),
+ "doplnky-05": ("Vak HOTFOLK na chrbát s kvetinovým vzorom v záhrade", "Vak HOTFOLK na záda s květinovým vzorem na zahradě", "HOTFOLK Turnbeutel mit Blumenmuster im Garten", "HOTFOLK drawstring backpack with floral pattern in a garden"),
+ "doplnky-06": ("Dve tašky HOTFOLK s fotoaparátom a slnečnými okuliarmi", "Dvě tašky HOTFOLK s fotoaparátem a slunečními brýlemi", "Zwei HOTFOLK Taschen mit Kamera und Sonnenbrille", "Two HOTFOLK totes with a camera and sunglasses"),
+ "doplnky-07": ("Vrecko HOTFOLK na lyžiarske okuliare s kvetinovým vzorom", "Pouzdro HOTFOLK na lyžařské brýle s květinovým vzorem", "HOTFOLK Beutel für Skibrillen mit Blumenmuster", "HOTFOLK ski goggle pouch with floral pattern"),
+ "doplnky-08": ("Vrecko HOTFOLK na slnečné okuliare", "Pouzdro HOTFOLK na sluneční brýle", "HOTFOLK Beutel für Sonnenbrillen", "HOTFOLK sunglasses pouch"),
+}
+LIDX = {"sk": 0, "cz": 1, "de": 2, "en": 3}
+def alt_for(name, lang, fallback=""):
+    return ALTS[name][LIDX[lang]] if name in ALTS else fallback
