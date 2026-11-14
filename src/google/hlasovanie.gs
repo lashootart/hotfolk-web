@@ -1,5 +1,5 @@
 /**
- * HOTFOLK® – Modelka mesiaca – hlasovanie (Google Apps Script)
+ * HOTFOLK® – Fotka mesiaca – hlasovanie (Google Apps Script)
  * Vlož do Google Tabuľky: Rozšírenia → Apps Script, ulož a nasaď ako webovú aplikáciu
  * (Spustiť ako: Ja, Prístup: Ktokoľvek). URL nasadenia vlož do content.py → VOTE_API.
  */
@@ -17,7 +17,7 @@ function out_(obj) {
 }
 
 function counts_(round) {
-  const sh = sheet_(SHEET, ['Čas', 'Kolo', 'Modelka', 'Meno', 'E-mail', 'Jazyk', 'Súhlas']);
+  const sh = sheet_(SHEET, ['Čas', 'Kolo', 'Fotka', 'Meno', 'E-mail', 'Jazyk', 'Súhlas']);
   const rows = sh.getDataRange().getValues().slice(1);
   const c = {};
   rows.forEach(function (r) { if (String(r[1]) === round) c[r[2]] = (c[r[2]] || 0) + 1; });
@@ -45,7 +45,7 @@ function doPost(e) {
   const lock = LockService.getScriptLock();
   lock.waitLock(10000);
   try {
-    const sh = sheet_(SHEET, ['Čas', 'Kolo', 'Modelka', 'Meno', 'E-mail', 'Jazyk', 'Súhlas']);
+    const sh = sheet_(SHEET, ['Čas', 'Kolo', 'Fotka', 'Meno', 'E-mail', 'Jazyk', 'Súhlas']);
     const rows = sh.getDataRange().getValues().slice(1);
     const dup = rows.some(function (r) { return String(r[1]) === round && String(r[4]).toLowerCase() === email; });
     if (dup) return out_({ ok: false, error: 'duplicate', counts: counts_(round) });

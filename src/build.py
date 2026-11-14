@@ -365,7 +365,7 @@ def contact_cards(lang, b2b_first=False):
     b2b = '<a class="ccard" href="mailto:%s"><span class="ci">%s</span><span><small>%s</small><b>%s</b></span></a>' % (MAIL_B2B, ICON["mail"], c["c_b2b"], MAIL_B2B)
     ph = '<a class="ccard" href="tel:%s"><span class="ci">%s</span><span><small>%s</small><b>%s</b></span></a>' % (PHONE_HREF, ICON["phone"], c["c_phone"], PHONE)
     ig = '<a class="ccard" href="%s" target="_blank" rel="noopener"><span class="ci">%s</span><span><small>Instagram</small><b>@hotfolk_official</b></span></a>' % (IG, ICON["ig"])
-    fb = '<a class="ccard" href="%s" target="_blank" rel="noopener"><span class="ci">%s</span><span><small>Facebook</small><b>Hotfolkofficial</b></span></a>' % (FB, ICON["fb"])
+    fb = '<a class="ccard" href="%s" target="_blank" rel="noopener"><span class="ci">%s</span><span><small>Facebook</small><b>Hotfolk</b></span></a>' % (FB, ICON["fb"])
     order = [b2b, info, ph, ig, fb] if b2b_first else [info, b2b, ph, ig, fb]
     return '<div class="cards rv">%s</div><div class="firm rv"><b>%s</b><br>%s</div>' % ("".join(order), c["firm_h"], c["firm"])
 
@@ -562,7 +562,7 @@ def build():
              ("/viktoriabiele/", ESHOP + "/plavky-hotfolk/"), ("/bielebrazilkysriasenimivanka/", ESHOP + "/plavky-hotfolk/"),
              ("/eliskacierne/", ESHOP + "/plavky-hotfolk/"), ("/plavky-hotfolk/", ESHOP + "/plavky-hotfolk/"),
              ("/nastenny-kalendar-zadeckovy/", ESHOP + "/nastenny-kalendar-zadeckovy/"), ("/stolovy-kalendar-pre-panov/", ESHOP + "/stolovy-kalendar-pre-panov/"),
-             ("/eshop/", ESHOP + "/"), ("/patreon/", PATREON)]
+             ("/eshop/", ESHOP + "/"), ("/patreon/", PATREON), ("/modelka-mesiaca/", "/fotka-mesiaca/"), ("/cz/modelka-mesice/", "/cz/fotka-mesice/"), ("/de/model-des-monats/", "/de/foto-des-monats/"), ("/en/model-of-the-month/", "/en/photo-of-the-month/")]
     ht = ["# HOTFOLK® – WebSupport (Apache)", "Options -Indexes", "DirectoryIndex index.html", "ErrorDocument 404 /404.html",
           '<If "%{REQUEST_URI} =~ m#^/cz/#">', "ErrorDocument 404 /cz/404.html", "</If>",
           '<If "%{REQUEST_URI} =~ m#^/de/#">', "ErrorDocument 404 /de/404.html", "</If>",

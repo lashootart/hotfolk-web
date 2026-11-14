@@ -20,10 +20,10 @@ LANG_LABEL = {"sk": "SK", "cz": "CZ", "de": "DE", "en": "EN"}
 
 PAGES = ["home", "vote", "gallery", "uncensored", "business", "about", "contact", "rules"]
 SLUG = {
-    "sk": {"home": "", "vote": "modelka-mesiaca/", "rules": "pravidla-sutaze/", "uncensored": "bez-cenzury/", "gallery": "galeria/", "business": "pre-firmy/", "about": "o-nas/", "contact": "kontakt/"},
-    "cz": {"home": "cz/", "vote": "cz/modelka-mesice/", "rules": "cz/pravidla-souteze/", "uncensored": "cz/bez-cenzury/", "gallery": "cz/galerie/", "business": "cz/pro-firmy/", "about": "cz/o-nas/", "contact": "cz/kontakt/"},
-    "de": {"home": "de/", "vote": "de/model-des-monats/", "rules": "de/teilnahmebedingungen/", "uncensored": "de/unzensiert/", "gallery": "de/galerie/", "business": "de/fuer-unternehmen/", "about": "de/ueber-uns/", "contact": "de/kontakt/"},
-    "en": {"home": "en/", "vote": "en/model-of-the-month/", "rules": "en/competition-rules/", "uncensored": "en/uncensored/", "gallery": "en/gallery/", "business": "en/business/", "about": "en/about/", "contact": "en/contact/"},
+    "sk": {"home": "", "vote": "fotka-mesiaca/", "rules": "pravidla-sutaze/", "uncensored": "bez-cenzury/", "gallery": "galeria/", "business": "pre-firmy/", "about": "o-nas/", "contact": "kontakt/"},
+    "cz": {"home": "cz/", "vote": "cz/fotka-mesice/", "rules": "cz/pravidla-souteze/", "uncensored": "cz/bez-cenzury/", "gallery": "cz/galerie/", "business": "cz/pro-firmy/", "about": "cz/o-nas/", "contact": "cz/kontakt/"},
+    "de": {"home": "de/", "vote": "de/foto-des-monats/", "rules": "de/teilnahmebedingungen/", "uncensored": "de/unzensiert/", "gallery": "de/galerie/", "business": "de/fuer-unternehmen/", "about": "de/ueber-uns/", "contact": "de/kontakt/"},
+    "en": {"home": "en/", "vote": "en/photo-of-the-month/", "rules": "en/competition-rules/", "uncensored": "en/uncensored/", "gallery": "en/gallery/", "business": "en/business/", "about": "en/about/", "contact": "en/contact/"},
 }
 
 # ceny overené na eshop.hotfolk.sk 13. 11. 2026
@@ -60,7 +60,7 @@ T = {}
 
 # ───────────────────────── SLOVENČINA ─────────────────────────
 T["sk"] = {
-    "nav": {"home": "Domov", "vote": "Modelka mesiaca", "rules": "Pravidlá súťaže", "gallery": "Galéria", "uncensored": "Bez cenzúry", "business": "Pre firmy", "about": "O nás", "contact": "Kontakt"},
+    "nav": {"home": "Domov", "vote": "Fotka mesiaca", "rules": "Pravidlá súťaže", "gallery": "Galéria", "uncensored": "Bez cenzúry", "business": "Pre firmy", "about": "O nás", "contact": "Kontakt"},
     "eshop": "E-shop",
     "menu": "Menu",
     "title": {
@@ -71,16 +71,16 @@ T["sk"] = {
         "contact": "Kontakt | HOTFOLK®",
     },
     "desc": {
-        "home": "HOTFOLK® – česko-slovenská značka: kalendáre 2027 s krásnymi ženami a mužmi z vidieka, plavky a doplnky vyrobené na Slovensku.",
-        "gallery": "Fotogaléria HOTFOLK® – fotky z kalendárov 2027, plavky a doplnky. Vidiek, príroda a krásni ľudia z Česka a Slovenska.",
+        "home": "HOTFOLK® – česko-slovenská značka: kalendáre 2027 so ženami a mužmi z vidieka, plavky a doplnky vyrobené na Slovensku.",
+        "gallery": "Fotogaléria HOTFOLK® – fotky z kalendárov 2027, plavky a doplnky. Vidiek, príroda, ženy a muži z Česka a Slovenska.",
         "business": "Kalendáre HOTFOLK® ako firemný darček, kalendáre na mieru pre firmy a organizácie a spolupráce so značkou.",
-        "about": "Kto stojí za HOTFOLK® – rodinná česko-slovenská značka, ktorá spája vidiek, krásnych ľudí a humor.",
+        "about": "Kto stojí za HOTFOLK® – rodinná česko-slovenská značka – vidiek, príroda, ženy a muži, humor.",
         "contact": "Kontakt HOTFOLK® – objednávky, otázky a spolupráce. info@hotfolk.sk, admin@hotfolk.sk, +421 915 201 071.",
     },
     "hero": {
         "eyebrow": "Kalendáre 2027 sú v predaji",
         "h1": "Česko‑slovenský vidiek <em>v tom najlepšom svetle.</em>", "tag": "Rok 2027 bude pekný. Sľubujeme.",
-        "lead": "HOTFOLK® je česko-slovenská značka, ktorá spája atraktívnych ľudí, vidiecku prírodu a dedinskú atmosféru s humorom a štipkou zmyselnosti. Fotíme kalendáre a robíme plavky a doplnky vyrobené na Slovensku.",
+        "lead": "HOTFOLK® je rodinná česko-slovenská značka. Fotíme ženy a mužov na vidieku a v prírode – s humorom a štipkou zmyselnosti. Robíme kalendáre, plavky a doplnky.",
         "cta1": "Vybrať kalendár", "cta2": "Pozrieť galériu",
         "meta": [("8 edícií", "kalendárov na rok 2027"), ("SK & CZ", "fotené na vidieku"), ("Made in SK", "plavky a doplnky")],
         "badge": ("2027", "nové kalendáre"),
@@ -90,9 +90,9 @@ T["sk"] = {
         "num": "01 — Čo je HOTFOLK",
         "text": "Drevenice, sady, lúky a dvory. Ľudia, na ktorých sa dobre pozerá. A humor, bez ktorého by to nebolo ono. <em>HOTFOLK® je vidiek, aký ste ešte nevideli.</em>",
         "pillars": [
-            ("Vidiek", "Fotíme na skutočných miestach na Slovensku a v Česku – v dedinách, sadoch, na lúkach aj pri starých dreveniciach."),
+            ("Vidiek", "Fotíme na dedine, nie v štúdiu – v sadoch, na lúkach aj pri starých dreveniciach na Slovensku a v Česku."),
             ("Ľudia", "Blondínky, tmavovlásky, ryšavky aj poriadni chlapi. Skutoční ľudia z Česka a Slovenska."),
-            ("Humor", "Zmyselne, s nadhľadom a s úsmevom. Odvážne, ale nikdy nie nudne."),
+            ("Humor", "Zmyselne, s nadhľadom a s úsmevom. Odvážne, no nudiť sa pri nás nebudete."),
         ],
     },
     "cal": {
@@ -131,7 +131,7 @@ T["sk"] = {
         "p": "Výber fotiek z kalendárov 2027 a z fotení našich produktov.",
         "more": "Celá galéria",
         "h1": "Galéria",
-        "lead": "Fotky z kalendárov HOTFOLK® 2027 a z fotení našich plaviek a doplnkov. Kliknite na fotku pre zväčšenie.",
+        "lead": "Fotky z kalendárov HOTFOLK® 2027 a z fotení našich plaviek a doplnkov. Kliknutím fotku zväčšíte.",
         "filters": {"all": "Všetko", "zeny": "Ženy", "muzi": "Muži", "plavky": "Plavky", "doplnky": "Doplnky"},
         "alt": {"zeny": "HOTFOLK kalendár 2027 – ženy na vidieku", "muzi": "HOTFOLK kalendár 2027 pre dámy – muži na vidieku", "plavky": "HOTFOLK plavky", "doplnky": "HOTFOLK doplnky"},
     },
@@ -145,17 +145,17 @@ T["sk"] = {
     "biz": {
         "eyebrow": "HOTFOLK® pre firmy",
         "h1": "Kalendár, ktorý <em>nezapadne</em> prachom.",
-        "lead": "Firemné odbery kalendárov HOTFOLK®, kalendáre fotené na mieru a spolupráce so značkou, ktorú ľudia radi vešajú na stenu.",
+        "lead": "Kalendáre HOTFOLK® pre firmy, kalendáre fotené na mieru a spolupráce so značkou, ktorú ľudia radi vešajú na stenu.",
         "s1": {
-            "h2": "Firemné odbery kalendárov",
+            "h2": "Kalendáre pre firmy",
             "p": "Hľadáte darček pre zamestnancov, partnerov alebo zákazníkov? Kalendáre HOTFOLK® potešia, pobavia a celý rok vás budú pripomínať.",
-            "list": ["Množstevné zľavy pri väčších odberoch", "Faktúra na firmu s DPH", "Doručenie po Slovensku aj Česku", "Poradíme s výberom edície – od Klasika po Topless"],
+            "list": ["Množstevné zľavy pri väčších objednávkach", "Faktúra na firmu s DPH", "Doručenie po Slovensku aj Česku", "Poradíme s výberom edície – od Klasika po Topless"],
             "cta": "Chcem cenovú ponuku",
         },
         "s2": {
             "h2": "Kalendár na mieru",
             "p": "Nafotíme kalendár pre vašu firmu, hasičský zbor, poľovnícke združenie, klub či inú organizáciu. Od nápadu cez fotenie až po hotový kalendár.",
-            "list": ["Koncept a výber lokácií", "Profesionálne fotenie s modelkami a modelmi", "Grafika kalendára vrátane vašej značky", "Pomoc s tlačou a dodaním"],
+            "list": ["Nápad a výber miest na fotenie", "Profesionálne fotenie s modelkami a modelmi", "Grafika kalendára vrátane vašej značky", "Pomoc s tlačou a dodaním"],
             "cta": "Prebrať nápad",
         },
         "s3": {
@@ -166,7 +166,7 @@ T["sk"] = {
         "steps_h": "Ako to prebieha",
         "steps": [
             ("Napíšte nám", "Pošlite e-mail alebo vyplňte formulár – počet kusov, termín, predstava."),
-            ("Ponuka", "Do pár dní dostanete cenovú ponuku a návrh riešenia."),
+            ("Ponuka", "Do niekoľkých dní vám pošleme cenu aj návrh, ako by to mohlo vyzerať."),
             ("Výroba", "Pripravíme kalendáre z ponuky alebo nafotíme váš vlastný."),
             ("Doručenie", "Kalendáre doručíme načas – ideálne pred Vianocami."),
         ],
@@ -174,16 +174,16 @@ T["sk"] = {
     "about": {
         "eyebrow": "O nás",
         "h1": "Rodinná značka s <em>vidiekom</em> v srdci.",
-        "lead": "HOTFOLK® vznikol z jednoduchej myšlienky: ukázať krásnych ľudí z Česka a Slovenska tam, kde je nám najlepšie – na vidieku. S humorom, odvahou a bez pretvárky.",
+        "lead": "HOTFOLK® vznikol z jednoduchej myšlienky: ukázať ženy a mužov z Česka a Slovenska tam, kde je nám najlepšie – na vidieku. S humorom, odvahou a bez pretvárky.",
         "story_h": "Náš príbeh",
         "story": [
             "Vidiek nie je nudný. Drevenice, sady, dvory a lúky majú svoju atmosféru – a keď do nich postavíte ľudí, ktorí sa nehanbia, vznikne niečo, čo poteší oko aj dušu.",
-            "Začínali sme kalendármi a dnes k nim pribudli plavky, tašky, ponožky a ďalšie doplnky. Všetko fotíme sami na skutočných miestach a čo sa dá, vyrábame na Slovensku.",
+            "Začínali sme kalendármi a dnes k nim pribudli plavky, tašky, ponožky a ďalšie doplnky. Všetko fotíme sami, na dedine a v prírode, a čo sa dá, vyrábame na Slovensku.",
             "Za značkou stojí rodina a pár ľudí, ktorí veria, že aj zmyselnosť môže byť s úsmevom.",
         ],
         "values_h": "Na čom si zakladáme",
         "values": [
-            ("Skutoční ľudia", "Na našich fotkách sú skutočné ženy a muži z Česka a Slovenska – žiadne modelky ani modeli z umelej inteligencie."),
+            ("Skutoční ľudia", "Na našich fotkách sú naozajstné ženy a muži z Česka a Slovenska – žiadne modelky ani modeli z umelej inteligencie."),
             ("Skutočné miesta", "Fotíme na vidieku, v dedinách a v prírode. Žiadne štúdiové kulisy namiesto lúky."),
             ("Vyrobené na Slovensku", "Plavky, doplnky aj kalendáre vznikajú u nás a s lokálnymi partnermi."),
         ],
@@ -205,24 +205,24 @@ T["sk"] = {
     "form": {
         "h": "Kontaktný formulár", "p": "Vyplňte pár riadkov a ozveme sa vám.",
         "name": "Meno", "email": "E-mail", "company": "Firma (nepovinné)", "topic": "Téma",
-        "topics": ["Otázka k objednávke", "Firemný odber kalendárov", "Kalendár na mieru", "Spolupráca", "Iné"],
+        "topics": ["Otázka k objednávke", "Kalendáre pre firmy", "Kalendár na mieru", "Spolupráca", "Iné"],
         "qty": "Počet kusov (približne)", "msg": "Správa", "send": "Odoslať správu",
         "ok": "Ďakujeme, správa bola odoslaná.", "subj": "Správa z webu hotfolk.sk",
-        "legal": "Odoslaním súhlasíte so spracovaním osobných údajov na účel odpovede.",
+        "legal": "Odoslaním formulára súhlasíte so spracovaním osobných údajov, aby sme vám mohli odpovedať. <a href=\"https://eshop.hotfolk.sk/podmienky-ochrany-osobnych-udajov/\">Ochrana osobných údajov</a>",
     },
     "footer": {
-        "about": "Česko-slovenská značka, ktorá spája vidiek, krásnych ľudí a humor. Kalendáre, plavky a doplnky.",
+        "about": "Rodinná česko-slovenská značka. Vidiek, príroda, ženy a muži – s humorom a štipkou zmyselnosti. Kalendáre, plavky a doplnky.",
         "nav": "Navigácia", "shop": "E-shop", "contact": "Kontakt",
         "shop_links": [("Kalendáre 2027", "/kalendare/"), ("Plavky", "/plavky-hotfolk/"), ("Tašky a vak", "/produkty/"), ("Ponožky", "/produkty/"), ("Darčekový poukaz", "/poukaz/")],
         "terms": "Obchodné podmienky", "privacy": "Ochrana osobných údajov",
-        "adult": "Obsah webu je určený osobám starším ako 18 rokov.",
+        "adult": "Web je len pre dospelých (18+).",
     },
-    "gate": {"h": "Len pre dospelých", "p": "Obsah tejto stránky je určený osobám starším ako 18 rokov. Máte viac ako 18 rokov?", "yes": "Áno, vstúpiť", "no": "Nie"},
+    "gate": {"h": "Len pre dospelých", "p": "Tento web je len pre dospelých. Máte už 18 rokov?", "yes": "Áno, vstúpiť", "no": "Nie"},
 }
 
 # ───────────────────────── ČEŠTINA ─────────────────────────
 T["cz"] = {
-    "nav": {"home": "Domů", "vote": "Modelka měsíce", "rules": "Pravidla soutěže", "gallery": "Galerie", "uncensored": "Bez cenzury", "business": "Pro firmy", "about": "O nás", "contact": "Kontakt"},
+    "nav": {"home": "Domů", "vote": "Fotka měsíce", "rules": "Pravidla soutěže", "gallery": "Galerie", "uncensored": "Bez cenzury", "business": "Pro firmy", "about": "O nás", "contact": "Kontakt"},
     "eshop": "E-shop",
     "menu": "Menu",
     "title": {
@@ -233,16 +233,16 @@ T["cz"] = {
         "contact": "Kontakt | HOTFOLK®",
     },
     "desc": {
-        "home": "HOTFOLK® – česko-slovenská značka: kalendáře 2027 s krásnými ženami a muži z venkova, plavky a doplňky vyrobené na Slovensku.",
-        "gallery": "Fotogalerie HOTFOLK® – fotky z kalendářů 2027, plavky a doplňky. Venkov, příroda a krásní lidé z Česka a Slovenska.",
+        "home": "HOTFOLK® – česko-slovenská značka: kalendáře 2027 se ženami a muži z venkova, plavky a doplňky vyrobené na Slovensku.",
+        "gallery": "Fotogalerie HOTFOLK® – fotky z kalendářů 2027, plavky a doplňky. Venkov, příroda, ženy a muži z Česka a Slovenska.",
         "business": "Kalendáře HOTFOLK® jako firemní dárek, kalendáře na míru pro firmy a organizace a spolupráce se značkou.",
-        "about": "Kdo stojí za HOTFOLK® – rodinná česko-slovenská značka, která spojuje venkov, krásné lidi a humor.",
+        "about": "Kdo stojí za HOTFOLK® – rodinná česko-slovenská značka – venkov, příroda, ženy a muži, humor.",
         "contact": "Kontakt HOTFOLK® – objednávky, dotazy a spolupráce. info@hotfolk.sk, admin@hotfolk.sk, +421 915 201 071.",
     },
     "hero": {
         "eyebrow": "Kalendáře 2027 jsou v prodeji",
         "h1": "Česko‑slovenský venkov <em>v tom nejlepším světle.</em>", "tag": "Rok 2027 bude pěkný. Slibujeme.",
-        "lead": "HOTFOLK® je česko-slovenská značka, která spojuje atraktivní lidi, venkovskou přírodu a vesnickou atmosféru s humorem a špetkou smyslnosti. Fotíme kalendáře a děláme plavky a doplňky vyrobené na Slovensku.",
+        "lead": "HOTFOLK® je rodinná česko-slovenská značka. Fotíme ženy a muže na venkově a v přírodě – s humorem a špetkou smyslnosti. Děláme kalendáře, plavky a doplňky.",
         "cta1": "Vybrat kalendář", "cta2": "Prohlédnout galerii",
         "meta": [("8 edic", "kalendářů na rok 2027"), ("CZ & SK", "foceno na venkově"), ("Made in SK", "plavky a doplňky")],
         "badge": ("2027", "nové kalendáře"),
@@ -307,17 +307,17 @@ T["cz"] = {
     "biz": {
         "eyebrow": "HOTFOLK® pro firmy",
         "h1": "Kalendář, který <em>nezapadne</em> prachem.",
-        "lead": "Firemní odběry kalendářů HOTFOLK®, kalendáře focené na míru a spolupráce se značkou, kterou lidé rádi věší na zeď.",
+        "lead": "Kalendáře HOTFOLK® pro firmy, kalendáře focené na míru a spolupráce se značkou, kterou lidé rádi věší na zeď.",
         "s1": {
-            "h2": "Firemní odběry kalendářů",
+            "h2": "Kalendáře pro firmy",
             "p": "Hledáte dárek pro zaměstnance, partnery nebo zákazníky? Kalendáře HOTFOLK® potěší, pobaví a připomínají vás celý rok.",
-            "list": ["Množstevní slevy při větších odběrech", "Faktura na firmu s DPH", "Doručení po Česku i Slovensku", "Poradíme s výběrem edice – od Klasiku po Topless"],
+            "list": ["Množstevní slevy při větších objednávkách", "Faktura na firmu s DPH", "Doručení po Česku i Slovensku", "Poradíme s výběrem edice – od Klasiku po Topless"],
             "cta": "Chci cenovou nabídku",
         },
         "s2": {
             "h2": "Kalendář na míru",
             "p": "Nafotíme kalendář pro vaši firmu, sbor dobrovolných hasičů, myslivecké sdružení, klub či jinou organizaci. Od nápadu přes focení až po hotový kalendář.",
-            "list": ["Koncept a výběr lokací", "Profesionální focení s modelkami a modely", "Grafika kalendáře včetně vaší značky", "Pomoc s tiskem a dodáním"],
+            "list": ["Nápad a výběr míst na focení", "Profesionální focení s modelkami a modely", "Grafika kalendáře včetně vaší značky", "Pomoc s tiskem a dodáním"],
             "cta": "Probrat nápad",
         },
         "s3": {
@@ -328,7 +328,7 @@ T["cz"] = {
         "steps_h": "Jak to probíhá",
         "steps": [
             ("Napište nám", "Pošlete e-mail nebo vyplňte formulář – počet kusů, termín, představa."),
-            ("Nabídka", "Během pár dní dostanete cenovou nabídku a návrh řešení."),
+            ("Nabídka", "Během několika dní vám pošleme cenu i návrh, jak by to mohlo vypadat."),
             ("Výroba", "Připravíme kalendáře z nabídky nebo nafotíme váš vlastní."),
             ("Doručení", "Kalendáře doručíme včas – ideálně před Vánoci."),
         ],
@@ -336,7 +336,7 @@ T["cz"] = {
     "about": {
         "eyebrow": "O nás",
         "h1": "Rodinná značka s <em>venkovem</em> v srdci.",
-        "lead": "HOTFOLK® vznikl z jednoduché myšlenky: ukázat krásné lidi z Česka a Slovenska tam, kde je nám nejlépe – na venkově. S humorem, odvahou a bez přetvářky.",
+        "lead": "HOTFOLK® vznikl z jednoduché myšlenky: ukázat ženy a muže z Česka a Slovenska tam, kde je nám nejlépe – na venkově. S humorem, odvahou a bez přetvářky.",
         "story_h": "Náš příběh",
         "story": [
             "Venkov není nudný. Roubenky, sady, dvory a louky mají svou atmosféru – a když do nich postavíte lidi, kteří se nestydí, vznikne něco, co potěší oko i duši.",
@@ -367,44 +367,44 @@ T["cz"] = {
     "form": {
         "h": "Kontaktní formulář", "p": "Vyplňte pár řádků a ozveme se vám.",
         "name": "Jméno", "email": "E-mail", "company": "Firma (nepovinné)", "topic": "Téma",
-        "topics": ["Dotaz k objednávce", "Firemní odběr kalendářů", "Kalendář na míru", "Spolupráce", "Jiné"],
+        "topics": ["Dotaz k objednávce", "Kalendáře pro firmy", "Kalendář na míru", "Spolupráce", "Jiné"],
         "qty": "Počet kusů (přibližně)", "msg": "Zpráva", "send": "Odeslat zprávu",
         "ok": "Děkujeme, zpráva byla odeslána.", "subj": "Zpráva z webu hotfolk.sk (CZ)",
-        "legal": "Odesláním souhlasíte se zpracováním osobních údajů za účelem odpovědi.",
+        "legal": "Odesláním formuláře souhlasíte se zpracováním osobních údajů, abychom vám mohli odpovědět. <a href=\"https://eshop.hotfolk.sk/podmienky-ochrany-osobnych-udajov/\">Ochrana osobních údajů</a>",
     },
     "footer": {
-        "about": "Česko-slovenská značka, která spojuje venkov, krásné lidi a humor. Kalendáře, plavky a doplňky.",
+        "about": "Rodinná česko-slovenská značka. Venkov, příroda, ženy a muži – s humorem a špetkou smyslnosti. Kalendáře, plavky a doplňky.",
         "nav": "Navigace", "shop": "E-shop", "contact": "Kontakt",
         "shop_links": [("Kalendáře 2027", "/kalendare/"), ("Plavky", "/plavky-hotfolk/"), ("Tašky a vak", "/produkty/"), ("Ponožky", "/produkty/"), ("Dárkový poukaz", "/poukaz/")],
         "terms": "Obchodní podmínky", "privacy": "Ochrana osobních údajů",
-        "adult": "Obsah webu je určen osobám starším 18 let.",
+        "adult": "Web je jen pro dospělé (18+).",
     },
-    "gate": {"h": "Jen pro dospělé", "p": "Obsah této stránky je určen osobám starším 18 let. Je vám více než 18 let?", "yes": "Ano, vstoupit", "no": "Ne"},
+    "gate": {"h": "Jen pro dospělé", "p": "Tento web je jen pro dospělé. Je vám už 18 let?", "yes": "Ano, vstoupit", "no": "Ne"},
 }
 
 # ───────────────────────── DEUTSCH ─────────────────────────
 T["de"] = {
-    "nav": {"home": "Start", "vote": "Model des Monats", "rules": "Teilnahmebedingungen", "gallery": "Galerie", "uncensored": "Unzensiert", "business": "Für Unternehmen", "about": "Über uns", "contact": "Kontakt"},
+    "nav": {"home": "Start", "vote": "Foto des Monats", "rules": "Teilnahmebedingungen", "gallery": "Galerie", "uncensored": "Unzensiert", "business": "Für Unternehmen", "about": "Über uns", "contact": "Kontakt"},
     "eshop": "Shop",
     "menu": "Menü",
     "title": {
-        "home": "HOTFOLK® – Kalender 2027, Bademode und Accessoires vom slowakisch-tschechischen Land",
+        "home": "HOTFOLK® – Kalender 2027, Bademode und Accessoires vom slowakisch-tschechischen Landleben",
         "gallery": "Galerie | HOTFOLK®",
         "business": "Kalender für Unternehmen und Kooperationen | HOTFOLK®",
         "about": "Über uns | HOTFOLK®",
         "contact": "Kontakt | HOTFOLK®",
     },
     "desc": {
-        "home": "HOTFOLK® – die slowakisch-tschechische Marke: Kalender 2027 mit schönen Frauen und Männern vom Land, Bademode und Accessoires made in Slovakia.",
-        "gallery": "HOTFOLK® Galerie – Fotos aus den Kalendern 2027, Bademode und Accessoires. Landleben, Natur und schöne Menschen aus der Slowakei und Tschechien.",
+        "home": "HOTFOLK® – die slowakisch-tschechische Marke: Kalender 2027 mit Frauen und Männern vom Land, Bademode und Accessoires made in Slovakia.",
+        "gallery": "HOTFOLK® Galerie – Fotos aus den Kalendern 2027, Bademode und Accessoires. Landleben, Natur, Frauen und Männer aus der Slowakei und Tschechien.",
         "business": "HOTFOLK® Kalender als Firmengeschenk, individuelle Kalender für Unternehmen und Vereine sowie Markenkooperationen.",
-        "about": "Wer hinter HOTFOLK® steht – eine slowakisch-tschechische Familienmarke, die Landleben, schöne Menschen und Humor verbindet.",
+        "about": "Wer hinter HOTFOLK® steht – eine slowakisch-tschechische Familienmarke – Landleben, Natur, Frauen und Männer, Humor.",
         "contact": "Kontakt HOTFOLK® – Bestellungen, Fragen und Kooperationen. info@hotfolk.sk, admin@hotfolk.sk, +421 915 201 071.",
     },
     "hero": {
         "eyebrow": "Die Kalender 2027 sind da",
-        "h1": "Das slowakisch‑tschechische Land <em>im besten Licht.</em>", "tag": "2027 wird ein schönes Jahr. Versprochen.",
-        "lead": "HOTFOLK® ist eine slowakisch-tschechische Marke, die attraktive Menschen, ländliche Natur und Dorfatmosphäre mit Humor und einer Prise Sinnlichkeit verbindet. Wir fotografieren Kalender und machen Bademode und Accessoires – hergestellt in der Slowakei.",
+        "h1": "Slowakisch‑tschechisches Landleben <em>im besten Licht.</em>", "tag": "2027 wird ein schönes Jahr. Versprochen.",
+        "lead": "HOTFOLK® ist eine slowakisch-tschechische Familienmarke. Wir fotografieren Frauen und Männer auf dem Land und in der Natur – mit Humor und einer Prise Sinnlichkeit. Wir machen Kalender, Bademode und Accessoires.",
         "cta1": "Kalender wählen", "cta2": "Zur Galerie",
         "meta": [("8 Editionen", "Kalender für 2027"), ("SK & CZ", "auf dem Land fotografiert"), ("Made in SK", "Bademode & Accessoires")],
         "badge": ("2027", "neue Kalender"),
@@ -498,7 +498,7 @@ T["de"] = {
     "about": {
         "eyebrow": "Über uns",
         "h1": "Eine Familienmarke mit <em>Herz</em> fürs Landleben.",
-        "lead": "HOTFOLK® entstand aus einer einfachen Idee: schöne Menschen aus der Slowakei und Tschechien dort zu zeigen, wo wir uns am wohlsten fühlen – auf dem Land. Mit Humor, Mut und ohne Verstellung.",
+        "lead": "HOTFOLK® entstand aus einer einfachen Idee: Frauen und Männer aus der Slowakei und Tschechien dort zu zeigen, wo wir uns am wohlsten fühlen – auf dem Land. Mit Humor, Mut und ohne Verstellung.",
         "story_h": "Unsere Geschichte",
         "story": [
             "Das Landleben ist nicht langweilig. Holzhäuser, Obstgärten, Höfe und Wiesen haben ihre eigene Atmosphäre – und wenn man Menschen hineinstellt, die sich nicht genieren, entsteht etwas, das Auge und Seele erfreut.",
@@ -535,7 +535,7 @@ T["de"] = {
         "legal": "Mit dem Absenden stimmen Sie der Verarbeitung Ihrer Daten zur Beantwortung Ihrer Anfrage zu.",
     },
     "footer": {
-        "about": "Slowakisch-tschechische Marke, die Landleben, schöne Menschen und Humor verbindet. Kalender, Bademode und Accessoires.",
+        "about": "Slowakisch-tschechische Familienmarke. Landleben, Natur, Frauen und Männer – mit Humor und einer Prise Sinnlichkeit. Kalender, Bademode und Accessoires.",
         "nav": "Navigation", "shop": "Shop", "contact": "Kontakt",
         "shop_links": [("Kalender 2027", "/kalendare/"), ("Bademode", "/plavky-hotfolk/"), ("Taschen", "/produkty/"), ("Socken", "/produkty/"), ("Gutschein", "/poukaz/")],
         "terms": "AGB", "privacy": "Datenschutz",
@@ -546,7 +546,7 @@ T["de"] = {
 
 # ───────────────────────── ENGLISH ─────────────────────────
 T["en"] = {
-    "nav": {"home": "Home", "vote": "Model of the month", "rules": "Competition rules", "gallery": "Gallery", "uncensored": "Uncensored", "business": "For business", "about": "About", "contact": "Contact"},
+    "nav": {"home": "Home", "vote": "Photo of the month", "rules": "Competition rules", "gallery": "Gallery", "uncensored": "Uncensored", "business": "For business", "about": "About", "contact": "Contact"},
     "eshop": "Shop",
     "menu": "Menu",
     "title": {
@@ -557,16 +557,16 @@ T["en"] = {
         "contact": "Contact | HOTFOLK®",
     },
     "desc": {
-        "home": "HOTFOLK® – a Slovak-Czech brand: 2027 calendars with beautiful women and men from the countryside, plus swimwear and accessories made in Slovakia.",
-        "gallery": "HOTFOLK® gallery – photos from the 2027 calendars, swimwear and accessories. Countryside, nature and beautiful people from Slovakia and Czechia.",
+        "home": "HOTFOLK® – a Slovak-Czech brand: 2027 calendars with women and men from the countryside, plus swimwear and accessories made in Slovakia.",
+        "gallery": "HOTFOLK® gallery – photos from the 2027 calendars, swimwear and accessories. Countryside, nature, women and men from Slovakia and Czechia.",
         "business": "HOTFOLK® calendars as corporate gifts, custom calendars for companies and organisations, and brand partnerships.",
-        "about": "Who is behind HOTFOLK® – a Slovak-Czech family brand bringing together the countryside, beautiful people and humour.",
+        "about": "Who is behind HOTFOLK® – a Slovak-Czech family brand – countryside, nature, women and men, humour.",
         "contact": "Contact HOTFOLK® – orders, questions and partnerships. info@hotfolk.sk, admin@hotfolk.sk, +421 915 201 071.",
     },
     "hero": {
         "eyebrow": "2027 calendars are out now",
         "h1": "The Slovak and Czech countryside <em>in its best light.</em>", "tag": "2027 is going to be a beautiful year. We promise.",
-        "lead": "HOTFOLK® is a Slovak-Czech brand that brings together attractive people, rural nature and village atmosphere – with humour and a pinch of sensuality. We shoot calendars and make swimwear and accessories in Slovakia.",
+        "lead": "HOTFOLK® is a Slovak-Czech family brand. We photograph women and men in the countryside and out in nature – with humour and a pinch of sensuality. We make calendars, swimwear and accessories.",
         "cta1": "Choose a calendar", "cta2": "View the gallery",
         "meta": [("8 editions", "of 2027 calendars"), ("SK & CZ", "shot in the countryside"), ("Made in SK", "swimwear & accessories")],
         "badge": ("2027", "new calendars"),
@@ -660,7 +660,7 @@ T["en"] = {
     "about": {
         "eyebrow": "About us",
         "h1": "A family brand with the <em>countryside</em> at heart.",
-        "lead": "HOTFOLK® started with a simple idea: to show beautiful people from Slovakia and Czechia where we feel best – in the countryside. With humour, courage and no pretence.",
+        "lead": "HOTFOLK® started with a simple idea: to show women and men from Slovakia and Czechia where we feel best – in the countryside. With humour, courage and no pretence.",
         "story_h": "Our story",
         "story": [
             "The countryside isn't boring. Log houses, orchards, farmyards and meadows have an atmosphere of their own – and when you put people in them who aren't shy, you get something that pleases both the eye and the soul.",
@@ -697,13 +697,13 @@ T["en"] = {
         "legal": "By sending, you agree to the processing of your personal data in order to reply.",
     },
     "footer": {
-        "about": "A Slovak-Czech brand that brings together the countryside, beautiful people and humour. Calendars, swimwear and accessories.",
+        "about": "A Slovak-Czech family brand. Countryside, nature, women and men – with humour and a pinch of sensuality. Calendars, swimwear and accessories.",
         "nav": "Navigation", "shop": "Shop", "contact": "Contact",
         "shop_links": [("2027 Calendars", "/kalendare/"), ("Swimwear", "/plavky-hotfolk/"), ("Bags", "/produkty/"), ("Socks", "/produkty/"), ("Gift voucher", "/poukaz/")],
         "terms": "Terms and conditions", "privacy": "Privacy policy",
-        "adult": "This website is intended for persons over 18 years of age.",
+        "adult": "This site is for adults only (18+).",
     },
-    "gate": {"h": "Adults only", "p": "This website is intended for persons over 18 years of age. Are you over 18?", "yes": "Yes, enter", "no": "No"},
+    "gate": {"h": "Adults only", "p": "This site is for adults only. Are you 18 or older?", "yes": "Yes, enter", "no": "No"},
 }
 
 # ───────── stránka Bez cenzúry / Patreon ─────────
@@ -718,7 +718,7 @@ UNC = {
   "cta": "Chcem vidieť viac", "cta2": "Kalendár Topless 2027",
   "sticker": "CENZÚRA",
   "why_h": "Čo ťa čaká na druhej strane",
-  "why": [("Bez cenzúry", "Topless fotky z našich kalendárov v plnej kráse – presne tak, ako ich nafotil fotograf."),
+  "why": [("Bez cenzúry", "Tie isté zábery v plnej kráse – presne tak, ako ich nafotil fotograf."),
           ("Viac fotiek", "Aj zábery, ktoré sa do kalendára nezmestili. Z jedného fotenia je vždy oveľa viac než jedna fotka."),
           ("Stále pribúdajú", "Nové fotky pridávame priebežne, takže nemusíš čakať na kalendár na ďalší rok.")],
   "how_h": "Ako sa pridať",
@@ -726,11 +726,11 @@ UNC = {
           ("Vyber si balík", "Od 1 $ mesačne. Členstvo môžeš kedykoľvek zrušiť."),
           ("Odomkni fotky", "Hneď po prihlásení vidíš všetko, čo k tvojej úrovni patrí.")],
   "band_h": "Kalendár je len začiatok.",
-  "band_p": "Topless fotky bez cenzúry nájdeš na našom Patreone.",
+  "band_p": "Fotky bez cenzúry nájdeš na našom Patreone.",
   "home_h": "Nemáš rád cenzúru?",
   "home_p": "Topless fotky z našich kalendárov bez bielych škvŕn nájdeš na Patreone. Len pre dospelých.",
   "home_cta": "Pozrieť bez cenzúry",
-  "note": "Obsah na Patreone je určený len osobám starším ako 18 rokov. Na našich fotkách sú skutočné ženy a muži, ktorí s fotením a zverejnením súhlasili.",
+  "note": "Obsah na Patreone je určený len osobám starším ako 18 rokov. Na našich fotkách sú naozajstné ženy a muži, ktorí s fotením a zverejnením súhlasili.",
  },
  "cz": {
   "tiers_h": "Vyber si balíček", "tiers_p": "Členství už od 1 $ měsíčně. Co přesně obsahuje každý balíček, uvidíš na Patreonu.", "per": "měsíčně", "from": "od 1 $ měsíčně",
@@ -742,7 +742,7 @@ UNC = {
   "cta": "Chci vidět víc", "cta2": "Kalendář Topless 2027",
   "sticker": "CENZURA",
   "why_h": "Co tě čeká na druhé straně",
-  "why": [("Bez cenzury", "Topless fotky z našich kalendářů v plné kráse – přesně tak, jak je nafotil fotograf."),
+  "why": [("Bez cenzury", "Tytéž záběry v plné kráse – přesně tak, jak je nafotil fotograf."),
           ("Víc fotek", "I záběry, které se do kalendáře nevešly. Z jednoho focení je vždy mnohem víc než jedna fotka."),
           ("Pořád přibývají", "Nové fotky přidáváme průběžně, takže nemusíš čekat na kalendář na další rok.")],
   "how_h": "Jak se přidat",
@@ -750,7 +750,7 @@ UNC = {
           ("Vyber si balíček", "Od 1 $ měsíčně. Členství můžeš kdykoli zrušit."),
           ("Odemkni fotky", "Hned po přihlášení vidíš všechno, co k tvé úrovni patří.")],
   "band_h": "Kalendář je jen začátek.",
-  "band_p": "Topless fotky bez cenzury najdeš na našem Patreonu.",
+  "band_p": "Fotky bez cenzury najdeš na našem Patreonu.",
   "home_h": "Nemáš rád cenzuru?",
   "home_p": "Topless fotky z našich kalendářů bez bílých skvrn najdeš na Patreonu. Jen pro dospělé.",
   "home_cta": "Podívat se bez cenzury",
@@ -810,7 +810,7 @@ for _l in LANGS:
     T[_l]["desc"]["uncensored"] = UNC[_l]["desc"]
     T[_l]["unc"] = UNC[_l]
 
-# ───────── Modelka mesiaca – hlasovanie ─────────
+# ───────── Fotka mesiaca – hlasovanie ─────────
 # Po nasadení Apps Scriptu sem vlož URL webovej aplikácie (končí na /exec)
 VOTE_API = "VLOZ_URL_APPS_SCRIPTU"
 VOTE = {
@@ -820,19 +820,19 @@ VOTE = {
     "end_txt": {"sk": "30. 11. 2026 o 23:59", "cz": "30. 11. 2026 ve 23:59", "de": "30.11.2026, 23:59 Uhr", "en": "30 November 2026, 23:59 CET"},
     "month": {"sk": "novembra", "cz": "listopadu", "de": "November", "en": "November"},
     "models": [                            # fotky: assets/img/vote-1.jpg … vote-3.jpg
-        {"id": "1", "name": "Modelka 1", "img": "vote-1"},
-        {"id": "2", "name": "Modelka 2", "img": "vote-2"},
-        {"id": "3", "name": "Modelka 3", "img": "vote-3"},
+        {"id": "1", "name": "Fotka 1", "img": "vote-1"},
+        {"id": "2", "name": "Fotka 2", "img": "vote-2"},
+        {"id": "3", "name": "Fotka 3", "img": "vote-3"},
     ],
 }
 
 VOTE_T = {
  "sk": {
-  "title": "Modelka mesiaca – hlasuj a vyhraj kalendár | HOTFOLK®",
-  "desc": "Vyber svoju HOTFOLK® modelku mesiaca. Každý hlas sa zaradí do žrebovania o kalendár HOTFOLK 2027.",
+  "title": "Fotka mesiaca – hlasuj a vyhraj kalendár | HOTFOLK®",
+  "desc": "Vyber HOTFOLK® fotku mesiaca. Každý hlas sa zaradí do žrebovania o kalendár HOTFOLK 2027.",
   "eyebrow": "Hlasovanie · súťaž o kalendár",
-  "h1": "Modelka <em>mesiaca</em>",
-  "lead": "Tri dievčatá, jeden hlas. Vyber svoju favoritku %(month)s – a každý platný hlas sa zaradí do žrebovania o kalendár HOTFOLK 2027.",
+  "h1": "Fotka <em>mesiaca</em>",
+  "lead": "Tri fotky, jeden hlas. Vyber svoju favoritku %(month)s – a každý platný hlas sa zaradí do žrebovania o kalendár HOTFOLK 2027.",
   "ends": "Hlasovanie končí", "left": ["d", "h", "min"], "closed": "Hlasovanie je ukončené",
   "vote": "Hlasovať", "chosen": "Tvoj výber", "votes": ["hlas", "hlasy", "hlasov"], "total": "Spolu hlasov",
   "form_h": "Ešte krok a hlas je tvoj", "form_p": "Vyplň meno a e-mail – podľa e-mailu ťa kontaktujeme, ak vyhráš. Jeden e-mail = jeden hlas v kole.",
@@ -844,18 +844,18 @@ VOTE_T = {
   "err": "Hlas sa nepodarilo odoslať. Skús to prosím znova o chvíľu.",
   "soon": "Hlasovanie spúšťame už čoskoro.",
   "prize_h": "Čo môžeš vyhrať", "prize": "Jeden vyžrebovaný hlasujúci vyhrá nástenný kalendár HOTFOLK 2027 podľa vlastného výberu.",
-  "how": [("Vyber modelku", "Klikni na Hlasovať pri dievčati, ktoré sa ti páči najviac."),
+  "how": [("Vyber fotku", "Klikni na Hlasovať pri fotke, ktorá sa ti páči najviac."),
           ("Vyplň meno a e-mail", "Jeden e-mail môže hlasovať raz za kolo."),
-          ("Drž palce", "Po skončení kola vyžrebujeme výhercu kalendára a vyhlásime modelku mesiaca.")],
+          ("Drž palce", "Po skončení kola vyžrebujeme výhercu kalendára a vyhlásime fotku mesiaca.")],
   "rules_link": "Pravidlá súťaže",
-  "home_h": "Kto bude modelka mesiaca?", "home_p": "Hlasuj za svoju favoritku a zaraď sa do žrebovania o kalendár HOTFOLK 2027.", "home_cta": "Hlasovať",
+  "home_h": "Ktorá bude fotka mesiaca?", "home_p": "Hlasuj za svoju favoritku a zaraď sa do žrebovania o kalendár HOTFOLK 2027.", "home_cta": "Hlasovať",
  },
  "cz": {
-  "title": "Modelka měsíce – hlasuj a vyhraj kalendář | HOTFOLK®",
-  "desc": "Vyber svou HOTFOLK® modelku měsíce. Každý hlas se zařadí do slosování o kalendář HOTFOLK 2027.",
+  "title": "Fotka měsíce – hlasuj a vyhraj kalendář | HOTFOLK®",
+  "desc": "Vyber HOTFOLK® fotku měsíce. Každý hlas se zařadí do slosování o kalendář HOTFOLK 2027.",
   "eyebrow": "Hlasování · soutěž o kalendář",
-  "h1": "Modelka <em>měsíce</em>",
-  "lead": "Tři holky, jeden hlas. Vyber svou favoritku %(month)s – a každý platný hlas se zařadí do slosování o kalendář HOTFOLK 2027.",
+  "h1": "Fotka <em>měsíce</em>",
+  "lead": "Tři fotky, jeden hlas. Vyber svou favoritku %(month)s – a každý platný hlas se zařadí do slosování o kalendář HOTFOLK 2027.",
   "ends": "Hlasování končí", "left": ["d", "h", "min"], "closed": "Hlasování je ukončeno",
   "vote": "Hlasovat", "chosen": "Tvůj výběr", "votes": ["hlas", "hlasy", "hlasů"], "total": "Celkem hlasů",
   "form_h": "Ještě krok a hlas je tvůj", "form_p": "Vyplň jméno a e-mail – podle e-mailu tě kontaktujeme, pokud vyhraješ. Jeden e-mail = jeden hlas v kole.",
@@ -867,18 +867,18 @@ VOTE_T = {
   "err": "Hlas se nepodařilo odeslat. Zkus to prosím znovu za chvíli.",
   "soon": "Hlasování spouštíme už brzy.",
   "prize_h": "Co můžeš vyhrát", "prize": "Jeden vylosovaný hlasující vyhraje nástěnný kalendář HOTFOLK 2027 podle vlastního výběru.",
-  "how": [("Vyber modelku", "Klikni na Hlasovat u holky, která se ti líbí nejvíc."),
+  "how": [("Vyber fotku", "Klikni na Hlasovat u fotky, která se ti líbí nejvíc."),
           ("Vyplň jméno a e-mail", "Jeden e-mail může hlasovat jednou za kolo."),
-          ("Drž palce", "Po skončení kola vylosujeme výherce kalendáře a vyhlásíme modelku měsíce.")],
+          ("Drž palce", "Po skončení kola vylosujeme výherce kalendáře a vyhlásíme fotku měsíce.")],
   "rules_link": "Pravidla soutěže",
-  "home_h": "Kdo bude modelka měsíce?", "home_p": "Hlasuj pro svou favoritku a zařaď se do slosování o kalendář HOTFOLK 2027.", "home_cta": "Hlasovat",
+  "home_h": "Která bude fotka měsíce?", "home_p": "Hlasuj pro svou favoritku a zařaď se do slosování o kalendář HOTFOLK 2027.", "home_cta": "Hlasovat",
  },
  "de": {
-  "title": "Model des Monats – abstimmen und Kalender gewinnen | HOTFOLK®",
-  "desc": "Wähle dein HOTFOLK® Model des Monats. Jede Stimme nimmt an der Verlosung eines HOTFOLK Kalenders 2027 teil.",
+  "title": "Foto des Monats – abstimmen und Kalender gewinnen | HOTFOLK®",
+  "desc": "Wähle das HOTFOLK® Foto des Monats. Jede Stimme nimmt an der Verlosung eines HOTFOLK Kalenders 2027 teil.",
   "eyebrow": "Abstimmung · Kalender-Gewinnspiel",
-  "h1": "Model des <em>Monats</em>",
-  "lead": "Drei Frauen, eine Stimme. Wähle deinen Favoriten für %(month)s – jede gültige Stimme nimmt an der Verlosung eines HOTFOLK Kalenders 2027 teil.",
+  "h1": "Foto des <em>Monats</em>",
+  "lead": "Drei Fotos, eine Stimme. Wähle deinen Favoriten für %(month)s – jede gültige Stimme nimmt an der Verlosung eines HOTFOLK Kalenders 2027 teil.",
   "ends": "Abstimmung endet", "left": ["T", "Std", "Min"], "closed": "Die Abstimmung ist beendet",
   "vote": "Abstimmen", "chosen": "Deine Wahl", "votes": ["Stimme", "Stimmen", "Stimmen"], "total": "Stimmen insgesamt",
   "form_h": "Noch ein Schritt", "form_p": "Name und E-Mail eingeben – per E-Mail benachrichtigen wir dich, wenn du gewinnst. Eine E-Mail = eine Stimme pro Runde.",
@@ -890,18 +890,18 @@ VOTE_T = {
   "err": "Die Stimme konnte nicht gesendet werden. Bitte versuche es gleich noch einmal.",
   "soon": "Die Abstimmung startet in Kürze.",
   "prize_h": "Was du gewinnen kannst", "prize": "Eine ausgeloste Person gewinnt einen HOTFOLK Wandkalender 2027 nach Wahl.",
-  "how": [("Model wählen", "Klicke bei deinem Favoriten auf Abstimmen."),
+  "how": [("Foto wählen", "Klicke bei deinem Lieblingsfoto auf Abstimmen."),
           ("Name und E-Mail", "Jede E-Mail kann einmal pro Runde abstimmen."),
-          ("Daumen drücken", "Nach Ende der Runde losen wir den Gewinner aus und küren das Model des Monats.")],
+          ("Daumen drücken", "Nach Ende der Runde losen wir den Gewinner aus und küren das Foto des Monats.")],
   "rules_link": "Teilnahmebedingungen",
-  "home_h": "Wer wird Model des Monats?", "home_p": "Stimme für deinen Favoriten ab und gewinne mit etwas Glück einen HOTFOLK Kalender 2027.", "home_cta": "Abstimmen",
+  "home_h": "Welches wird das Foto des Monats?", "home_p": "Stimme für deinen Favoriten ab und gewinne mit etwas Glück einen HOTFOLK Kalender 2027.", "home_cta": "Abstimmen",
  },
  "en": {
-  "title": "Model of the month – vote and win a calendar | HOTFOLK®",
-  "desc": "Pick your HOTFOLK® model of the month. Every vote enters the draw for a HOTFOLK 2027 calendar.",
+  "title": "Photo of the month – vote and win a calendar | HOTFOLK®",
+  "desc": "Pick the HOTFOLK® photo of the month. Every vote enters the draw for a HOTFOLK 2027 calendar.",
   "eyebrow": "Vote · calendar giveaway",
-  "h1": "Model of the <em>month</em>",
-  "lead": "Three women, one vote. Pick your favourite for %(month)s – every valid vote enters the draw for a HOTFOLK 2027 calendar.",
+  "h1": "Photo of the <em>month</em>",
+  "lead": "Three photos, one vote. Pick your favourite for %(month)s – every valid vote enters the draw for a HOTFOLK 2027 calendar.",
   "ends": "Voting ends", "left": ["d", "h", "min"], "closed": "Voting has closed",
   "vote": "Vote", "chosen": "Your pick", "votes": ["vote", "votes", "votes"], "total": "Total votes",
   "form_h": "One more step", "form_p": "Enter your name and e-mail – we'll e-mail you if you win. One e-mail = one vote per round.",
@@ -913,11 +913,11 @@ VOTE_T = {
   "err": "Your vote couldn't be sent. Please try again in a moment.",
   "soon": "Voting opens soon.",
   "prize_h": "What you can win", "prize": "One randomly drawn voter wins a HOTFOLK 2027 wall calendar of their choice.",
-  "how": [("Pick a model", "Click Vote next to the one you like best."),
+  "how": [("Pick a photo", "Click Vote next to the one you like best."),
           ("Name and e-mail", "Each e-mail can vote once per round."),
-          ("Fingers crossed", "When the round ends, we draw the calendar winner and announce the model of the month.")],
+          ("Fingers crossed", "When the round ends, we draw the calendar winner and announce the photo of the month.")],
   "rules_link": "Competition rules",
-  "home_h": "Who will be model of the month?", "home_p": "Vote for your favourite and enter the draw for a HOTFOLK 2027 calendar.", "home_cta": "Vote now",
+  "home_h": "Which will be photo of the month?", "home_p": "Vote for your favourite and enter the draw for a HOTFOLK 2027 calendar.", "home_cta": "Vote now",
  },
 }
 for _l in LANGS:
@@ -928,16 +928,16 @@ for _l in LANGS:
 # ───────── Pravidlá súťaže ─────────
 ORG = "HOTFOLK s.r.o., Nábrežná 4, 039 01 Turčianske Teplice, IČO: 56 323 735"
 RULES = {
- "sk": {"title": "Pravidlá súťaže Modelka mesiaca | HOTFOLK®", "desc": "Pravidlá súťaže a hlasovania HOTFOLK® Modelka mesiaca.",
-  "h1": "Pravidlá súťaže <em>Modelka mesiaca</em>", "lead": "Platné od 14. 11. 2026.",
+ "sk": {"title": "Pravidlá súťaže Fotka mesiaca | HOTFOLK®", "desc": "Pravidlá súťaže a hlasovania HOTFOLK® Fotka mesiaca.",
+  "h1": "Pravidlá súťaže <em>Fotka mesiaca</em>", "lead": "Platné od 14. 11. 2026.",
   "sec": [
    ("1. Usporiadateľ", ["Usporiadateľom súťaže je " + ORG + " (ďalej „usporiadateľ“). Kontakt: admin@hotfolk.sk."]),
-   ("2. Trvanie", ["Súťaž prebieha v mesačných kolách. Začiatok a koniec každého kola sú uvedené na stránke Modelka mesiaca na hotfolk.sk."]),
+   ("2. Trvanie", ["Súťaž prebieha v mesačných kolách. Začiatok a koniec každého kola sú uvedené na stránke Fotka mesiaca na hotfolk.sk."]),
    ("3. Kto sa môže zapojiť", ["Fyzická osoba staršia ako 18 rokov s doručovacou adresou na Slovensku alebo v Česku.",
                                "Zo súťaže sú vylúčení zamestnanci a spolupracovníci usporiadateľa a ich blízke osoby."]),
-   ("4. Ako sa zapojiť", ["Účastník na stránke Modelka mesiaca zahlasuje za jednu z troch modeliek a vyplní meno, e-mail a súhlas s týmito pravidlami.",
+   ("4. Ako sa zapojiť", ["Účastník na stránke Fotka mesiaca zahlasuje za jednu z troch fotiek a vyplní meno, e-mail a súhlas s týmito pravidlami.",
                           "Jeden e-mail môže v jednom kole hlasovať iba raz. Účasť je bezplatná a nie je podmienená nákupom.",
-                          "Šanca na výhru nezávisí od toho, za ktorú modelku účastník hlasoval."]),
+                          "Šanca na výhru nezávisí od toho, za ktorú fotku účastník hlasoval."]),
    ("5. Výhra a žrebovanie", ["V každom kole je jedna výhra: nástenný kalendár HOTFOLK 2027 podľa výberu výhercu.",
                               "Výhercu náhodne vyžrebuje usporiadateľ spomedzi všetkých platných hlasov daného kola do 3 dní od jeho skončenia a upovedomí ho e-mailom.",
                               "Ak výherca do 14 dní neodpovie a neoznámi doručovaciu adresu, výhra prepadá a usporiadateľ môže vyžrebovať náhradníka.",
@@ -950,16 +950,16 @@ RULES = {
    ("8. Záverečné ustanovenia", ["Usporiadateľ si vyhradzuje právo pravidlá zmeniť alebo súťaž ukončiť; zmeny zverejní na tejto stránke.",
                                  "Súťaž nie je sponzorovaná, podporovaná ani spravovaná spoločnosťami Meta, Instagram ani Google."]),
   ]},
- "cz": {"title": "Pravidla soutěže Modelka měsíce | HOTFOLK®", "desc": "Pravidla soutěže a hlasování HOTFOLK® Modelka měsíce.",
-  "h1": "Pravidla soutěže <em>Modelka měsíce</em>", "lead": "Platná od 14. 11. 2026.",
+ "cz": {"title": "Pravidla soutěže Fotka měsíce | HOTFOLK®", "desc": "Pravidla soutěže a hlasování HOTFOLK® Fotka měsíce.",
+  "h1": "Pravidla soutěže <em>Fotka měsíce</em>", "lead": "Platná od 14. 11. 2026.",
   "sec": [
    ("1. Pořadatel", ["Pořadatelem soutěže je " + ORG + ", Slovensko (dále „pořadatel“). Kontakt: admin@hotfolk.sk."]),
-   ("2. Trvání", ["Soutěž probíhá v měsíčních kolech. Začátek a konec každého kola jsou uvedeny na stránce Modelka měsíce na hotfolk.sk."]),
+   ("2. Trvání", ["Soutěž probíhá v měsíčních kolech. Začátek a konec každého kola jsou uvedeny na stránce Fotka měsíce na hotfolk.sk."]),
    ("3. Kdo se může zapojit", ["Fyzická osoba starší 18 let s doručovací adresou na Slovensku nebo v Česku.",
                                "Ze soutěže jsou vyloučeni zaměstnanci a spolupracovníci pořadatele a jejich blízké osoby."]),
-   ("4. Jak se zapojit", ["Účastník na stránce Modelka měsíce hlasuje pro jednu ze tří modelek a vyplní jméno, e-mail a souhlas s těmito pravidly.",
+   ("4. Jak se zapojit", ["Účastník na stránce Fotka měsíce hlasuje pro jednu ze tří fotek a vyplní jméno, e-mail a souhlas s těmito pravidly.",
                           "Jeden e-mail může v jednom kole hlasovat pouze jednou. Účast je bezplatná a není podmíněna nákupem.",
-                          "Šance na výhru nezávisí na tom, pro kterou modelku účastník hlasoval."]),
+                          "Šance na výhru nezávisí na tom, pro kterou fotku účastník hlasoval."]),
    ("5. Výhra a slosování", ["V každém kole je jedna výhra: nástěnný kalendář HOTFOLK 2027 podle výběru výherce.",
                              "Výherce náhodně vylosuje pořadatel ze všech platných hlasů daného kola do 3 dnů od jeho skončení a vyrozumí ho e-mailem.",
                              "Pokud výherce do 14 dnů neodpoví a nesdělí doručovací adresu, výhra propadá a pořadatel může vylosovat náhradníka.",
@@ -972,16 +972,16 @@ RULES = {
    ("8. Závěrečná ustanovení", ["Pořadatel si vyhrazuje právo pravidla změnit nebo soutěž ukončit; změny zveřejní na této stránce.",
                                 "Soutěž není sponzorována, podporována ani spravována společnostmi Meta, Instagram ani Google."]),
   ]},
- "de": {"title": "Teilnahmebedingungen Model des Monats | HOTFOLK®", "desc": "Teilnahmebedingungen für Abstimmung und Gewinnspiel HOTFOLK® Model des Monats.",
-  "h1": "Teilnahmebedingungen <em>Model des Monats</em>", "lead": "Gültig ab 14.11.2026.",
+ "de": {"title": "Teilnahmebedingungen Foto des Monats | HOTFOLK®", "desc": "Teilnahmebedingungen für Abstimmung und Gewinnspiel HOTFOLK® Foto des Monats.",
+  "h1": "Teilnahmebedingungen <em>Foto des Monats</em>", "lead": "Gültig ab 14.11.2026.",
   "sec": [
    ("1. Veranstalter", ["Veranstalter ist " + ORG + ", Slowakei („Veranstalter“). Kontakt: admin@hotfolk.sk."]),
-   ("2. Dauer", ["Das Gewinnspiel läuft in monatlichen Runden. Beginn und Ende jeder Runde stehen auf der Seite Model des Monats auf hotfolk.sk."]),
+   ("2. Dauer", ["Das Gewinnspiel läuft in monatlichen Runden. Beginn und Ende jeder Runde stehen auf der Seite Foto des Monats auf hotfolk.sk."]),
    ("3. Teilnahmeberechtigung", ["Natürliche Personen ab 18 Jahren mit Lieferadresse in der Slowakei oder in Tschechien.",
                                  "Ausgeschlossen sind Mitarbeiter und Partner des Veranstalters sowie deren Angehörige."]),
-   ("4. Teilnahme", ["Teilnehmende stimmen auf der Seite Model des Monats für eines von drei Models ab und geben Name, E-Mail und ihre Zustimmung zu diesen Bedingungen an.",
+   ("4. Teilnahme", ["Teilnehmende stimmen auf der Seite Foto des Monats für eines von drei Fotos ab und geben Name, E-Mail und ihre Zustimmung zu diesen Bedingungen an.",
                      "Jede E-Mail-Adresse kann pro Runde nur einmal abstimmen. Die Teilnahme ist kostenlos und nicht an einen Kauf gebunden.",
-                     "Die Gewinnchance hängt nicht davon ab, für welches Model abgestimmt wurde."]),
+                     "Die Gewinnchance hängt nicht davon ab, für welches Foto abgestimmt wurde."]),
    ("5. Gewinn und Verlosung", ["Pro Runde wird ein HOTFOLK Wandkalender 2027 nach Wahl des Gewinners verlost.",
                                 "Der Veranstalter lost den Gewinner innerhalb von 3 Tagen nach Rundenende zufällig aus allen gültigen Stimmen aus und benachrichtigt ihn per E-Mail.",
                                 "Meldet sich der Gewinner nicht innerhalb von 14 Tagen mit einer Lieferadresse, verfällt der Gewinn und es kann ein Ersatzgewinner gezogen werden.",
@@ -994,16 +994,16 @@ RULES = {
    ("8. Schlussbestimmungen", ["Der Veranstalter behält sich vor, die Bedingungen zu ändern oder das Gewinnspiel zu beenden; Änderungen werden auf dieser Seite veröffentlicht.",
                                "Das Gewinnspiel steht in keiner Verbindung zu Meta, Instagram oder Google und wird von diesen weder gesponsert noch unterstützt oder organisiert."]),
   ]},
- "en": {"title": "Model of the month – competition rules | HOTFOLK®", "desc": "Rules for the HOTFOLK® Model of the month vote and giveaway.",
-  "h1": "Competition rules – <em>Model of the month</em>", "lead": "Valid from 14 November 2026.",
+ "en": {"title": "Photo of the month – competition rules | HOTFOLK®", "desc": "Rules for the HOTFOLK® Photo of the month vote and giveaway.",
+  "h1": "Competition rules – <em>Photo of the month</em>", "lead": "Valid from 14 November 2026.",
   "sec": [
    ("1. Organiser", ["The organiser is " + ORG + ", Slovakia (the “organiser”). Contact: admin@hotfolk.sk."]),
-   ("2. Duration", ["The competition runs in monthly rounds. The start and end of each round are shown on the Model of the month page at hotfolk.sk."]),
+   ("2. Duration", ["The competition runs in monthly rounds. The start and end of each round are shown on the Photo of the month page at hotfolk.sk."]),
    ("3. Who can enter", ["Individuals aged 18 or over with a delivery address in Slovakia or Czechia.",
                          "Employees and partners of the organiser and their close relatives are excluded."]),
-   ("4. How to enter", ["Entrants vote for one of three models on the Model of the month page and provide their name, e-mail and agreement to these rules.",
+   ("4. How to enter", ["Entrants vote for one of three photos on the Photo of the month page and provide their name, e-mail and agreement to these rules.",
                         "Each e-mail address may vote only once per round. Entry is free and no purchase is necessary.",
-                        "The chance of winning does not depend on which model the entrant voted for."]),
+                        "The chance of winning does not depend on which photo the entrant voted for."]),
    ("5. Prize and draw", ["Each round has one prize: a HOTFOLK 2027 wall calendar of the winner's choice.",
                           "The organiser draws the winner at random from all valid votes of the round within 3 days of its end and notifies them by e-mail.",
                           "If the winner does not reply with a delivery address within 14 days, the prize is forfeited and a substitute may be drawn.",

@@ -51,6 +51,10 @@ Redirect 301 /nastenny-kalendar-zadeckovy/ https://eshop.hotfolk.sk/nastenny-kal
 Redirect 301 /stolovy-kalendar-pre-panov/ https://eshop.hotfolk.sk/stolovy-kalendar-pre-panov/
 Redirect 301 /eshop/ https://eshop.hotfolk.sk/
 Redirect 301 /patreon/ https://www.patreon.com/hotfolk
+Redirect 301 /modelka-mesiaca/ https://www.hotfolk.sk/fotka-mesiaca/
+Redirect 301 /cz/modelka-mesice/ https://www.hotfolk.sk/cz/fotka-mesice/
+Redirect 301 /de/model-des-monats/ https://www.hotfolk.sk/de/foto-des-monats/
+Redirect 301 /en/model-of-the-month/ https://www.hotfolk.sk/en/photo-of-the-month/
 
 <IfModule mod_expires.c>
 ExpiresActive On
