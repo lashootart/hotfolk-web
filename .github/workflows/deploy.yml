@@ -21,8 +21,8 @@ jobs:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          protocol: ftp
-          log-level: verbose
+          protocol: ftps
+          security: loose
           local-dir: ./site/
           server-dir: /hotfolk.sk/web/
           # mazať sa budú len súbory, ktoré nahrala táto automatika – _stary_wp a iné ostanú
