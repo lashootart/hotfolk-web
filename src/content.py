@@ -32,16 +32,16 @@ SLUG = {
 # ceny overené na eshop.hotfolk.sk 13. 11. 2026
 PRODUCTS = {
     "wall": [
-        {"id": "klasik", "img": "kal-klasik", "url": "/nastenny-kalendar/", "price": 15.98, "tag": None},
-        {"id": "premium", "img": "kal-premium", "url": "/nastenny-kalendar-premium/", "price": 19.98, "tag": "qr"},
-        {"id": "zadeckovy", "img": "kal-zadeckovy", "url": "/nastenny-kalendar-zadeckovy/", "price": 21.98, "tag": "limited"},
-        {"id": "topless", "img": "kal-topless", "url": "/nastenny-kalendar-topless/", "price": 23.98, "tag": "18"},
-        {"id": "damy", "img": "kal-damy", "url": "/nastenny-kalendar-pre-damy-2027/", "price": 16.98, "tag": None},
+        {"id": "klasik", "img": "kal-klasik", "url": "/nastenny-kalendar/", "price": 16.48, "tag": None},
+        {"id": "premium", "img": "kal-premium", "url": "/nastenny-kalendar-premium/", "price": 20.48, "tag": "qr"},
+        {"id": "zadeckovy", "img": "kal-zadeckovy", "url": "/nastenny-kalendar-zadeckovy/", "price": 22.48, "tag": "limited"},
+        {"id": "topless", "img": "kal-topless", "url": "/nastenny-kalendar-topless/", "price": 24.48, "tag": "18"},
+        {"id": "damy", "img": "kal-damy", "url": "/nastenny-kalendar-pre-damy-2027/", "price": 17.48, "tag": None},
     ],
     "desk": [
-        {"id": "s_klasik", "img": "kal-stolovy", "url": "/stolovy-kalendar-pre-panov/", "price": 15.98, "tag": None},
-        {"id": "s_damy", "img": "kal-stolovy-damy", "url": "/stolovy-kalendar-pre-damy-2027/", "price": 15.98, "tag": None},
-        {"id": "s_topless", "img": "kal-stolovy-topless", "url": "/stolovy-kalendar-2027-topless/", "price": 16.98, "tag": "18"},
+        {"id": "s_klasik", "img": "kal-stolovy", "url": "/stolovy-kalendar-pre-panov/", "price": 16.48, "tag": None},
+        {"id": "s_damy", "img": "kal-stolovy-damy", "url": "/stolovy-kalendar-pre-damy-2027/", "price": 16.48, "tag": None},
+        {"id": "s_topless", "img": "kal-stolovy-topless", "url": "/stolovy-kalendar-2027-topless/", "price": 17.48, "tag": "18"},
     ],
 }
 
